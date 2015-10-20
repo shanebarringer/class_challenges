@@ -3,7 +3,7 @@
 ### Part 1 - Variables
 -
 1. Create a file named `height_to_centimeters.rb`
-1. Store your name and height (in inches) 
+1. Store your name and height (in inches) into variables. 
 1. Concatenate those variables into a sentence and have it print to the screen.
 1. For example: Shane is 60 inches tall
 	
