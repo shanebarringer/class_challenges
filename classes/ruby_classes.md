@@ -144,7 +144,10 @@ This type of method is referred to as a **getter**. That's right, it allows for 
 
 That's great! But what if we want to update the object's first_name attribute?
 <br>
-We could try this:
+To update the attribute you simply type: `object.attribute = "whatever the new attribute should be"`
+<br>
+
+So, we could try this:
 
 ```ruby
 good_guy.first_name = "james"
@@ -172,6 +175,7 @@ Ah! another **NoMethodError**, By now, I'm sure you're thinking "Oh! we just nee
 ```
 So, what's happening here is pretty simple. (Don't let the = sign throw you off). Because we want to redifine the @first\_name attribute, we'll need to pass a new\_name argument. Then, we take that new_name parameter, turn it into an argument and assign the new value to the @first\_name instance variable.
 
+
 try running this now:
 
 ```ruby
@@ -197,6 +201,58 @@ Awesome! you've just created getter and setter instance methods!
 **Challenge 3**
 
 - Write the getter and setter methods for the last_name and occupation attributes.
+
+- - - -
+
+## Instance Methods
+
+Now we can retrieve and update the attributes of this object.<br>
+However, in order to review the attributes we'll have to look at them individually 
+
+```ruby
+puts good_guy.first_name
+puts good_guy.last_name
+puts good_guy.occupation
+```
+or
+
+```ruby
+puts "#{good_guy.first_name} #{good_guy.last_name}, #{good_guy.last_name}"
+```
+Either way, we going to have to repeat this code more than once. Looks like we need an **instance method**
+<br>
+An instance method is an action that's available to each object in the class. 
+
+**Challenge 4**
+
+1. Create an instance method titled list_attributes 
+2. Make it output all of the attributes
+<br>
+
+With the list\_attributes method available we can simply call: `puts good_guy.list_attributes`<br>
+
+Update your script and run it to insure that everything is working properly.
+
+```ruby
+good_guy = Person.new("jim", "gordon", "detective")
+
+puts good_guy
+puts good_guy
+puts good_guy.list_attributes
+good_guy.first_name = "james"
+good_guy.last_name = "Gordon"
+good_guy.occupation = "Commissioner"
+puts good_guy.list_attributes
+```
+
+You should get an output similar to this:
+
+```shell
+#<Person:0x007f8284075388>
+#<Person:0x007f8284075388>
+jim gordon, detective
+james Gordon, Commissioner
+```
 
 - - - -
 ## Answers
@@ -245,8 +301,12 @@ def occupation=(new_occupation)
 end  
 ```
 
-
-
+####Challenge 4
+```ruby
+def list_attributes
+  "#{@first_name} #{@last_name}, #{@occupation}"
+end
+```
 
 
 
