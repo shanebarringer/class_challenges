@@ -254,6 +254,73 @@ jim gordon, detective
 james Gordon, Commissioner
 ```
 
+
+##attr_'s
+
+This is all well and good, but it seems like a lot of code duplication. You're probably thinking, "What if there was a method had all the functionality of getter's and setter's?"
+<br>
+And if you are thinking that, then you'd be correct! Thankfully Ruby has attr methods that will help us out.
+<br>
+
+`attr_reader` is the equivalent of a getter method. Here's how it works:
+
+```ruby
+class Person
+
+	attr_reader :first_name, :last_name, occupation
+	
+	def initialize(first_name, last_name, occupation)
+		@first_name = first_name
+		@last_name = last_name
+		@occupation = occupation
+	end
+
+end
+```
+
+So, what's happening here?<br>
+`attr_reader` is a method that accepts multiple paramters. So when we call `attr_reader` and pass in the attributes (from our initialize method) we are essentially doing this:<br>
+`attr_reader(:first_name, :last_name, occupation)`<br>
+`attr_reader` takes those parameters and writes the entire getter method each attribute.
+
+<br>
+Pretty cool right?
+<br>
+
+Now at this point, you're probably thinking "Well what about the setter method?" <br>
+`attr_writer` to the rescue!
+<br>
+`attr_writer` will take care of all your setter needs. Here's how it looks in the class:
+
+```ruby
+class Person
+
+    attr_reader :first_name, :last_name, occupation
+    attr_writer :first_name, :last_name, occupation
+    
+    #other code
+end
+    
+```
+
+Now you can delete all that getter and setter code in your class. Go ahead, do it now. 
+<br>
+
+Whew! that feels better right? 
+<br>
+
+However, now that I'm looking at this, it seems like we still have some code duplication. Good news! Ruby has a method that combines the attr\_reader and attr\_writer methods into one. 
+
+**Challenge 5**
+
+Go to the [documentation](http://ruby-doc.org/core-2.0.0/Module.html#method-i-attr) and find the solution.
+
+<br>
+
+Finally, run your code and make sure everything is still working. 
+
+
+
 - - - -
 ## Answers
 
@@ -308,6 +375,10 @@ def list_attributes
 end
 ```
 
+### Challenge 5
+```ruby
+attr_accessor :first_name, :last_name, :occupation
+```
 
 
 
