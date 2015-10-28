@@ -219,7 +219,24 @@ def first_name
 end
 ```
   
+####Challenge 3
+```ruby
+  def last_name
+    @last_name
+  end
 
+  def last_name=(new_name)
+    @last_name = new_name
+  end
+
+  def occupation
+    @occupation
+  end
+
+  def occupation=(new_occupation)
+    @occupation = new_occupation
+  end  
+```
 
 
 
