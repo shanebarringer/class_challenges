@@ -295,8 +295,8 @@ Now at this point, you're probably thinking "Well what about the setter method?"
 ```ruby
 class Person
 
-    attr_reader :first_name, :last_name, occupation
-    attr_writer :first_name, :last_name, occupation
+    attr_reader :first_name, :last_name, :occupation
+    attr_writer :first_name, :last_name, :occupation
     
     #other code
 end
