@@ -1,12 +1,17 @@
 
+# Ruby Classes
 
-Here is how we create a class
+Let's start by creating a class:
 
 ```ruby
 class Person
 
 end
 ```
+Pretty simple stuff right? 
+<br>
+As you've heard many times before. In Ruby _everything is an object_... The Job of a class is to define all of the logic and actions that will be available to our object. 
+<br>
 
 In order to **instantiate** (create) objects of a **class**, your class must include an initialize method
 
@@ -40,10 +45,13 @@ Take the attributes (first\_name, last\_name, and occupation)
 
 - - - -
 ##Instantiation
-Now we can create an instance (object) of the Person class.
+
+***Instantation*** - the 'computer-sciencey' way of saying "Let's create an object"
+
+Now that we have an *intialize method* we can create an _instance_ (object) of the Person class.
 <br> 
 
-`good_guy = Person.new("jim", "gordon", "police officer")`
+`good_guy = Person.new("jim", "gordon", "detective")`
 
 When the code above runs, here is what happens: 
 
@@ -168,7 +176,7 @@ So, what's happening here is pretty simple. (Don't let the = sign throw you off)
 try running this now:
 
 ```ruby
-good_guy = Person.new("jim", "gordon", "police officer")
+good_guy = Person.new("jim", "gordon", "detective")
 
 puts good_guy
 puts good_guy
