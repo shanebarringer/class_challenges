@@ -8,9 +8,9 @@ class Person
 
 end
 ```
-Pretty simple stuff right? 
-<br>
-As you've heard many times before. In Ruby _everything is an object_... The Job of a class is to define all of the logic and actions that will be available to our object. 
+Pretty simple stuff right?<br>
+
+As you've heard many times before. In Ruby _everything is an object_... The job of a class is to define all of the logic and actions that will be available to our object. 
 <br>
 
 In order to **instantiate** (create) objects of a **class**, your class must include an initialize method
@@ -24,7 +24,6 @@ In order to **instantiate** (create) objects of a **class**, your class must inc
 		- first_name
 		- last_name
 		- occupation 
-
 <br>
 
 The initialize method runs when you **create** an object (get it? **initialize**).
