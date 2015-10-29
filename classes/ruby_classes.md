@@ -318,8 +318,61 @@ Go to the [documentation](http://ruby-doc.org/core-2.0.0/Module.html#method-i-at
 <br>
 
 Finally, run your code and make sure everything is still working. 
+- - - -
+
+## Inheritance 
+
+So now we have a class for People, we can create as many People objects as we want. Which is great... for normal people... but what about Superhero's? <br>
+I mean, yeah, they have all the same attributes as normals, but they also have superpowers and sweet costumes. 
+
+How do we account for that in our Person class? <br>
+Easy answer... We don't.
+
+We'll need to create a Superhero class 
+
+**Challenge 6** 
+Create a Superhero class
 
 
+<br>
+Okay, so now we have a superhero class. The good news is that superhero's have a lot of the same attributes as regular people. So we can make our Superhero class inherit from the Person class. 
+
+```ruby
+class Superhero < Person
+
+end
+```
+
+Now Superhero get's access to all the methods in our Person class. <br> 
+Go ahead and test it. 
+
+**Challenge 7**
+
+Instantiate a superhero object named batman <br>
+*for now, make "Batman" his occupation*
+
+Try calling the list_attributes instance method on our batman object. <br> 
+It works right? pretty cool eh? <br>
+Even though our Superhero class doesn't define the method, it has access due to inheritance
+
+
+Also, worth noting, the initialize method fired even though the Superhero class doesn't have one defined.
+<br>
+
+As discussed before, Superhero's have special powers and secret identities. (Which is why we need to create another separate class for them).<br>
+In programming terms, this would mean that *objects of the Superhero class have special actions (methods)*. These special actions are only available to **objects** of the **Superhero class**. <br>
+
+
+**Challenge 8**
+
+To get a better understanding of this, let's create an instance method for the Superhero class.<br>
+All Superhero's have a secret identity right? 
+
+- Create an instance method that (when called) reveals the secret identity of the superhero object.
+- Call it to insure that it works as expected. 
+
+
+Great! So now our Superhero objects have access to all of the methods and abilities of the person class, but also have their own method's and actions. 
 
 - - - -
 ## Answers
@@ -380,10 +433,24 @@ end
 attr_accessor :first_name, :last_name, :occupation
 ```
 
+### Challenge 6
+```ruby
+class Superhero
 
+end
+```
 
+### Challenge 7
+```ruby
+batman = Superhero.new("bruce", "wayne", "batman")
+```
 
-
+### Challenge 8
+```ruby
+def secret_identity
+  "#{@first_name} #{last_name}"
+end
+```
 
 
 
