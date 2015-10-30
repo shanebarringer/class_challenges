@@ -372,7 +372,12 @@ All Superhero's have a secret identity right?
 - Call it to insure that it works as expected. 
 
 
-Great! So now our Superhero objects have access to all of the methods and abilities of the person class, but also have their own method's and actions. 
+Great! So now our Superhero objects have access to all of the methods and abilities of the person class, but also have their own instance method's and actions. 
+- - - - 
+
+## Super
+
+
 
 - - - -
 ## Answers
@@ -452,7 +457,36 @@ def secret_identity
 end
 ```
 
+### Result
+```ruby
+class Person
+  attr_accessor :first_name, :last_name, :occupation
 
+  def initialize(first_name, last_name, occupation)
+  	@first_name = first_name
+  	@last_name = last_name
+  	@occupation = occupation
+  end
+
+  def list_attributes
+    "#{@first_name} #{@last_name}, #{@occupation}"
+  end
+end
+
+class Superhero < Person
+  attr_accessor :super_power, :hero_name
+
+  def initialize(first_name, last_name, occupation, super_power)
+    super(first_name, last_name, occupation)
+    @hero_name = @occupation
+    @super_power = super_power
+  end
+
+  def secret_identity
+    "#{@first_name} #{last_name}"
+  end
+end
+```
 
 
 
