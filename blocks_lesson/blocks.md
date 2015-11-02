@@ -11,7 +11,7 @@ numbers.each do |x|
 end
 ```
 
-**blocks are the code that sit between the *do* and *end* in your ruby code** 
+**a block contains the code that sits between _*do*_ and _*end*_ in your ruby code** 
 
 Procs are for storing your block in a named variable
 
@@ -20,6 +20,9 @@ countdown = Proc.new do |x|
 	puts "#{x}" 
 	sleep(1)
 end
+
+# instantiate an object of the Proc class (called a proc object)
+
 ```
 You can then invoke a Proc in place of your block.
 
