@@ -1,3 +1,15 @@
+## Objective
+So, you've probably found yourself asking these types of questions: 
+
+- What exactly is SQL? 
+- How do Databases work? 
+- What are Rails Models doing behind the scene?
+- What in the world is going on with my terminal's output???
+
+Today's objective is to answer those questions and help you get a grip on how your Rails Models work with your database. 
+
+- - - -
+
 ## Relational vs Non-Relational
 
 A relational database is a series of **Tables** with **Columns** and **Rows**... Yes... Kind of like Excel or CSV. 
@@ -48,7 +60,6 @@ What you do need to know is that both databases have strengths and weaknesses. R
 ## Create an app
 
 
-In this situation 
 
 okay, let's start by creating a new app
 
