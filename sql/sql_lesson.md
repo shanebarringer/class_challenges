@@ -52,13 +52,13 @@ In this situation
 
 okay, let's start by creating a new app
 
-```shell
+```bash
 $ rails new todo
 ```
 
 We will then scaffold a resource titled items
 
-```shell
+```bash
 $ rails generate scaffold tasks name:string priority:integer
 ```
 
