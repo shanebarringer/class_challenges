@@ -71,13 +71,13 @@ okay, let's start by creating a new app
 $ rails new todo
 ```
 
-We will then scaffold a resource titled items
+We will then scaffold a resource titled tasks
 
 ```bash
 $ rails generate scaffold tasks name:string priority:integer
 ```
 
-Let's go take a look at the migration file:
+Before doing anything else, go take a look at the migration file:
 
 ```ruby
 class CreateTasks < ActiveRecord::Migration
@@ -138,8 +138,48 @@ Which will result in the following terminal output:
 
 - - - -
 
-## Rails Console
+## Rails Console (meet your new best friend)
 
+Rails console is your friend. It's like a mashup of irb and db_console, but better than both! <br>
+Essentially, rails console loads your entire application into a REPL so you have access to your entire application from the command line. <br>
+I know what you're thinking, and yes... you're right. It saves you *tons* of time. 
+
+So how do you get into rails console? <br>
+It's like almost every other rails command. Simply type `$ rails console` and you'll be dropped into a prompt that looks kinda like this: 
+<br>
+`irb(main):001:0>`
+
+First we'll need to CREATE a few tasks, similar to how we INSERTED data using SQL. 
+
+**rails console challenge:**
+
+- In Rails Console...
+	- Instantiate a new Task object
+	- Assign a value to name and priority (using hash syntax) 
+	- save it to the database
+
+*hint: [You may find the Rails Guides helpful](http://guides.rubyonrails.org/v3.2.13/getting_started.html) for solving this problem.*
+
+Take a moment and review the SQL output in the terminal. 
+
+```bash
+(0.2ms)  begin transaction
+SQL (1.1ms)  INSERT INTO "tasks" ("name", "priority", "created_at", "updated_at") VALUES (?, ?, ?, ?)  
+[["name", "Pick up coffee"], ["priority", 1], ["created_at", "2015-11-04 05:19:09.834387"], ["updated_at", "2015-11-04 05:19:09.834387"]]
+(0.7ms)  commit transaction
+
+=> true
+```
+<br>
+
+Add 4 or 5 more items through the rails console. 
+<br>
+
+#### New or Create
+A shorthand way to add items is by calling `Task.create` (this rolls new and save into one command)
+
+
+table print gem
 - - - - 
 
 ## Seed some Data
@@ -170,7 +210,7 @@ Here's what your seed file should look like:
 
 ```ruby
 def random_string(x)
-('a'..'z').to_a.shuffle[0..x-1].join
+	('a'..'z').to_a.shuffle[0..x-1].join
 end
 
 10.times do
@@ -181,4 +221,18 @@ end
 Now run `rake db:seed`
 
 This will add 10 new random items to the database. 
+
+- - - - 
+## Answers
+
+
+**rails console answer:**
+
+```bash
+irb(main):001:0> x = Task.new(name: "Pick up coffee", priority: 1)
+=> #<Task id: nil, name: "Pick up coffee", priority: 1, created_at: nil, updated_at: nil>
+irb(main):002:0> x.save
+```
+
+
 
