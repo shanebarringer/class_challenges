@@ -94,16 +94,43 @@ end
 Let's break this down, line-by-line 
 
 ```ruby
+# CreateTasks is inheriting from ActiveRecord
 class CreateTasks < ActiveRecord::Migration
+
+# A change method is being created
   def change
+  
+  # create table is a method that exists within rails 
+  
+  	# create a tasks table
     create_table :tasks do |t|
+        
+     # t represents an iteration 
+     
+     # create a string column with the title of name  
       t.string :name
+      
+      #createa an integer column with the name of priority
       t.integer :priority
 
+		# create timestamps and don't allow them to be null (a lifesaver)
       t.timestamps null: false
+      
     end
   end
 end
 ```
 
 
+Now you'll want to run the migration and actually CREATE the table by running `$ rake db:migrate` <br> 
+
+Which will result in the following terminal output:
+ 
+```bash
+== 20151103215638 CreateTasks: migrating ======================================
+-- create_table(:tasks)
+   -> 0.0012s
+== 20151103215638 CreateTasks: migrated (0.0013s) =============================
+```
+
+*Make sure to check the SCHEMA to see your new table*
