@@ -16,6 +16,7 @@ A relational database is a series of **Tables** with **Columns** and **Rows**...
 <br>
 
 Let's take a look at a Relational-Databasey version of a Todo App:
+<center>
 
 |Name  | Priority  |
 |:-:|:-:|
@@ -23,11 +24,15 @@ Let's take a look at a Relational-Databasey version of a Todo App:
 | Pick up Vegan Cheese | 3   |
 | Send out Party Invitations  | 2  |
 
+</center>
+
 In this situation, the **Tasks** table contains 2 columns:  Name and Priority. <br>
 In OOP terms, these columns would be considered the attributes of an object. And **each individual row** would be considered an object of the Todo class. 
 
 So, when you create a new object by running the command `Todo.new("call sister", 2) ` 
 You'll create the following in the database:
+
+<center>
 
 |Name  | Priority  |
 |:-:|:-:|
@@ -36,7 +41,7 @@ You'll create the following in the database:
 | Send out Party Invitations  | 2  |
 | call sister  |  2  |
 
-
+</center>
 
 Now a Non-Relational version:
 
@@ -49,17 +54,16 @@ Now a Non-Relational version:
 	}
 }
 ```
-
+<br>
 Explaining non-relational databases is outside of the scope of this particular lesson. 
 
-What you do need to know is that both databases have strengths and weaknesses. Rails primarily uses Relational Databases, and mastering SQL (and Relational Database concepts) is essential to becoming a good Rails Developer. Once you've mastered the Relational Database, understanding Non-Relational Databases will be a breeze. 
+What you do need to know is that both styles of data storage (relational and non-relational) have strengths and weaknesses. <br> Rails primarily uses Relational Databases, and mastering SQL (along with Relational Database concepts) is essential to becoming a good Rails Developer. <br> Once you've mastered the Relational Database, understanding Non-Relational Databases will be a breeze. 
 
 <br>
-
 - - - -
 ## Create an app
 
-
+Alright! time for us to implement some things.
 
 okay, let's start by creating a new app
 
