@@ -120,7 +120,8 @@ class CreateTasks < ActiveRecord::Migration
   end
 end
 ```
-
+- - - - 
+## Create the Table
 
 Now you'll want to run the migration and actually CREATE the table by running `$ rake db:migrate` <br> 
 
@@ -134,3 +135,50 @@ Which will result in the following terminal output:
 ```
 
 *Make sure to check the SCHEMA to see your new table*
+
+- - - -
+
+## Rails Console
+
+- - - - 
+
+## Seed some Data
+
+Let's talk about seeds.<br>
+If you navigate to `db/seeds.rb` in your text editor you'll see that you will add data directly to the database. 
+
+Try creating a method that generates a random string. 
+
+```ruby 
+def random_string(x)
+('a'..'z').to_a.shuffle[0..x-1].join
+end
+```
+After that create a loop that 
+
+- runs 10 times 
+- utilizes the random_string method and applies that as the value for name
+- selects a random number from 1 - 3 and applies that as the value for priority
+
+```ruby
+10.times do
+ 	Task.create(name: random_string(8), priority: (1..3).to_a.sample)
+end
+```
+
+Here's what your seed file should look like:
+
+```ruby
+def random_string(x)
+('a'..'z').to_a.shuffle[0..x-1].join
+end
+
+10.times do
+  Task.create(name: random_string(8), priority: (1..3).to_a.sample)
+end
+```
+
+Now run `rake db:seed`
+
+This will add 10 new random items to the database. 
+
