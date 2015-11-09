@@ -141,7 +141,6 @@ Here's what your code should look like so far:
 <head>
 
   <meta charset="utf-8">
-  <link rel="stylesheet" href="css/normalize.css" media="screen" title="no title" charset="utf-8">
   <link rel="stylesheet" href="css/main.css" media="screen" title="no title" charset="utf-8">
 
   <title>Sign Up!</title>
@@ -184,8 +183,31 @@ Here's what your code should look like so far:
 
 - - - - 
 
-# On to Style
-
+# On to Style...
+- - - - 
 
 
 ### Normalize A.K.A. - Browser Reset
+- - - - 
+
+Okay, so first things first. We *need* to get rid of this awful default browser styling
+
+**Challenge 6** - Let's [Normalize!](https://necolas.github.io/normalize.css/) 
+
+1. Go to the site above and download the file
+	2. Create a new stylesheet and paste in the contents of normalize.css
+	3. link the stylesheet to your index.html page
+
+<br>
+
+```html
+<link rel="stylesheet" href="css/normalize.css" media="screen" title="no title" charset="utf-8">
+```
+
+(In the `<head>` make sure to link this above your main.css file. Otherwise it will overwrite all of your custom styles)
+
+- - - - 
+
+
+
+ 
