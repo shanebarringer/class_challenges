@@ -209,5 +209,71 @@ Okay, so first things first. We *need* to get rid of this awful default browser 
 - - - - 
 
 
+## Setting up the Body
+
+Start by using the `*` selector to apply border-box to the all of the elements.
+
+```css
+* {
+  box-sizing: border-box;
+}
+```
+
+So, what does the above code do? Well, according to learnlayout.com:
+ > When you set box-sizing: border-box; on an element, the padding and border of that element no longer increase its width.
+ 
+This is incredibly helpful as it removes unexpected layout issues. 
+
+
+Next we'll work on the body.<br>
+
+**Challenge 7** - colors!
+
+1. Give the body a background color of `#DDD`
+2. Give the text a color of `#222`
+
+ ```css
+ body {
+  background: #DDD;
+  color: #222;
+ }
+ ```
+<br> 
+
+While we're at it, let's go ahead and select a font (I've already picked out Noto Sans, but feel free to experiment)
+ 
+Right below your `*` selector apply the following:
+ 
+ ```css
+ @import url(https://fonts.googleapis.com/css?family=Noto+Sans|Comfortaa:400,300,700);
+
+ ```
+ 
+ Now add the following to your `body` statement:
+ 
+```css
+  font-family: 'Noto Sans', sans-serif;
+  font-weight: 300;
+```
+<br>
+
+Which should result in the following:
+
+```css
+body {
+  background: #DDD;
+  color: #222;
+  font-family: 'Noto Sans', sans-serif;
+  font-weight: 300;
+}
+```
+
+That should take care of the body. Next positioning!
+
+- - - -
+
+### Positioning   
+
+
 
  
