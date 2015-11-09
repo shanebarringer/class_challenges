@@ -119,6 +119,73 @@ We'll start by building out the body of our document and creating the form.
 </div>
 ```     	 
 - - - - 
+### Or
+- - - -
+
+Create a `<div>` with the clas attribute of "or" and the text 'OR'
+
+```html
+<div class="or">OR</div>
+```
+- - - -
+## HTML
+
+Whew! You've complete the structure of the html document. Now all that's left is to add some style
+
+Here's what your code should look like so far:
+
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="css/normalize.css" media="screen" title="no title" charset="utf-8">
+  <link rel="stylesheet" href="css/main.css" media="screen" title="no title" charset="utf-8">
+
+  <title>Sign Up!</title>
+
+</head>
+
+<body>
+
+  <div id="login-box">
+    <div class="left">
+      <h1>Create Account</h1>
+
+      <form class="sign-up" action="index.html" method="post">
+        <input type="text" name="username" placeholder="Username" />
+        <input type="text" name="email" placeholder="E-mail" />
+        <input type="password" name="password" placeholder="Password" />
+        <input type="password" name="password2" placeholder="Retype password" />
+
+        <button class="sign-up-button" type="submit" />Sign Me Up</button>
+      </form>
+    </div>
+
+    <div class="right">
+      <span class="loginwith">Sign in with
+        <br />social network</span>
+
+      <button class="social-signin facebook">Log in with facebook</button>
+      <button class="social-signin twitter">Log in with Twitter</button>
+      <button class="social-signin google">Log in with Google+</button>
+    </div>
+
+    <div class="or">OR</div>
+
+  </div>
+
+</body>
+
+</html>
+```
+
+- - - - 
+
+# On to Style
+
 
 
 ### Normalize A.K.A. - Browser Reset
