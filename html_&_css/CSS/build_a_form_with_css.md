@@ -513,6 +513,16 @@ border-bottom: 2px solid #16a085;
 color: #16a085;
 transition: 0.2s ease;
 ``` 
+<br>
+
+Once complete, you'll need to apply a style to the entire document on focus. 
+place the following code near the top of your stylesheet
+
+```css
+*:focus {
+  outline: none;
+}
+```
 
 At the end of your styling you should have the following code for your left `<div>`
 
@@ -563,5 +573,127 @@ h1 {
 .sign-up-button:active {
   opacity: 1;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+```
+
+- - - - 
+
+## Style the Right
+
+**Challenge 15** - style the `<span>`
+
+1. Set the display of your 'logmein' class to block
+2. Give it a margin bottom of 40px
+3. Assign a font-size of 2em
+4. Give a color of #FFF
+5. Center the text
+
+<br>
+
+```css
+.loginwith {
+  display: block;
+  margin-bottom: 40px;
+  font-size: 2em;
+  color: #FFF;
+  text-align: center;
+}
+```
+
+Got it! Awesome, now let's style those buttons. 
+
+**Challenge 16** - Style ALL buttons
+
+1. give a marin bottom of 20px
+2. width of 220px
+3. height of 36px
+4. remove the border
+5. give a border radius of 2px
+6. set the text color to #FFF
+
+<br>
+
+```css
+button.social-signin {
+  margin-bottom: 20px;
+  width: 220px;
+  height: 36px;
+  border: none;
+  border-radius: 2px;
+  color: #FFF;
+}
+```
+
+You may notice some code duplication. Let's go ahead and refactor
+
+**Challenge 17** - Refactor the buttons!
+
+1. Group the buttons (from your left and right `<div>`'s together in your css
+2. Refresh and make sure everything looks good
+3. Refactor the code duplication
+
+When it's all said and done, you should have something similar to this:
+
+```css
+/**********************************************
+  start of button styling
+/**********************************************/
+
+button {
+  margin-bottom: 20px;
+  width: 220px;
+  height: 36px;
+  border: none;
+  border-radius: 2px;
+  color: #FFF;
+  font-weight: 400;
+}
+
+button:hover {
+  opacity: 0.8;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  transition: 0.1s ease;
+}
+
+button:active {
+  opacity: 1;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+.sign-up-button {
+  margin: 5px auto;
+  background: #16a085;
+  text-transform: uppercase;
+}
+
+/**********************************************
+  end of button styling
+/**********************************************/
+
+```
+
+That kept the styling of the left button. Now let's add some color to the right buttons
+
+**Challenge 18** - Add some color to the right buttons
+
+1. Apply the following background colors 
+	2. for the facebook class: #32508E
+	3. twitter class:  #55ACEE
+	4. google class; #DD4B39
+5. Refresh! 
+
+<br>
+
+```css
+.facebook {
+  background: #32508E;
+}
+
+.twitter {
+  background: #55ACEE;
+}
+
+.google {
+  background: #DD4B39;
 }
 ```
