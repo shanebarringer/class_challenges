@@ -232,12 +232,13 @@ Next we'll work on the body.<br>
 1. Give the body a background color of `#DDD`
 2. Give the text a color of `#222`
 
- ```css
- body {
-  background: #DDD;
-  color: #222;
- }
- ```
+```css
+body {
+	background: #DDD;
+	color: #222; 
+}
+```
+
 <br> 
 
 While we're at it, let's go ahead and select a font (I've already picked out Noto Sans, but feel free to experiment)
@@ -274,6 +275,65 @@ That should take care of the body. Next positioning!
 
 ### Positioning   
 
+**Challenge 8 (part 1)** - The Login-Box
+
+1. Start by giving the login-box a relative position
+2. Apply a margin of 
+	3. 5% on the top/bottom
+	4. auto on the left/right
+
+<br>
+
+```css
+#login-box {
+  position: relative;
+  margin: 5% auto;
+}
+```
+Great! Even though, it doesn't look like much happened. Our Login Box is responding. 
+
+**Challenge 8 (part 2)** - Now all we need to do is set a width and height and give it some style
+
+1. Set a width of 600px
+2. Set a height of 400px
+3. Refresh your browser and make sure the box is still responding
+4. Give the box a background color of #FFF
+5. Assign a border-radius of 2px
+6. Add some box-shadow and assign the following values
+	7. horizontal shadow of: 0
+	8. vertical shadow of: 2px
+	9. blur of: 4px
+	10. color of: rgba(0,0,0,0.4)
+
+(*hint:* you may find [this](http://www.w3schools.com/cssref/css3_pr_box-shadow.asp) helpful for box-shadow)
+
+<br>
+
+```css
+#login-box {
+  position: relative;
+  margin: 5% auto;
+  width: 600px;
+  height: 400px;
+  background: #FFF;
+  border-radius: 2px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+```
+
+Ahhh much better. Now we can start focusing on the right and left `<div>`'s
+
+- - - - 
+
+## Left div
+
+
+
+
+
+
+
+ 
 
 
  
