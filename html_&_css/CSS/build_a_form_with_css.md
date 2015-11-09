@@ -697,3 +697,206 @@ That kept the styling of the left button. Now let's add some color to the right 
   background: #DD4B39;
 }
 ```
+- - - - 
+
+## OR
+
+We're close to the end. Let's style that 'or' class
+
+**Challenge 19**
+
+1. Give a position of absolute
+2. set it 
+	3. 180 px from top
+	3. 280 px from left
+4. Assign a width of 40px
+5. Give a height of 40px
+6. Refresh!
+
+<br>
+
+```css
+.or {
+  position: absolute;
+  top: 180px;
+  left: 280px;
+  width: 40px;
+  height: 40px;
+}
+```
+
+Okay, not exactly what we're looking for. Now try this:
+
+**Challenge 20**
+
+1. Set the background to #DDD
+2. give a border radius of 50%
+3. center the text
+4. set a line-height of 40px
+5. declare a box-shadow of 0 2px 4px rgba(0, 0, 0, 0.4)
+
+<br>
+
+```css
+.or {
+  position: absolute;
+  top: 180px;
+  left: 280px;
+  width: 40px;
+  height: 40px;
+  background: #DDD;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+```
+
+Refresh and enjoy the fruits of your labor. 
+
+- - - - 
+
+```css
+* {
+  box-sizing: border-box;
+}
+@import url(https://fonts.googleapis.com/css?family=Noto+Sans|Comfortaa:400,300,700);
+*:focus {
+  outline: none;
+}
+body {
+  background: #DDD;
+  color: #222;
+  font-family: 'Noto Sans', sans-serif;
+  font-weight: 300;
+}
+#login-box {
+  position: relative;
+  margin: 5% auto;
+  width: 600px;
+  height: 400px;
+  background: #FFF;
+  border-radius: 2px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+/**********************************************
+  Left and Right div Positioning
+/**********************************************/
+
+.left, .right {
+  padding: 40px;
+  width: 300px;
+  height: 400px;
+  position: absolute;
+  top: 0
+}
+.left {
+  left: 0;
+}
+.right {
+  right: 0;
+  background: url('https://goo.gl/YbktSj');
+  background-size: cover;
+  background-position: center;
+  border-radius: 0 2px 2px 0;
+}
+
+/**********************************************
+  END div positioning
+/**********************************************/
+
+
+/**********************************************
+  Left div styling
+/**********************************************/
+
+h1 {
+  margin: 0 0 20px 0;
+  font-weight: 300;
+  font-size: 2em;
+}
+.sign-up input {
+  border: none;
+  border-bottom: 1px solid #AAA;
+  display: block;
+  margin-bottom: 20px;
+  padding: 4px;
+  width: 220px;
+  height: 32px;
+  font-weight: 400;
+  /*transition: 0.2s ease*/
+}
+.sign-up input:focus {
+  border: none;
+  border-bottom: 2px solid #16a085;
+  color: #16a085;
+  transition: 0.2s ease;
+}
+
+/**********************************************
+  end of left div styling
+/**********************************************/
+
+
+/**********************************************
+  start of button styling
+/**********************************************/
+
+button {
+  margin-bottom: 20px;
+  width: 220px;
+  height: 36px;
+  border: none;
+  border-radius: 2px;
+  color: #FFF;
+  font-weight: 400;
+}
+button:hover {
+  opacity: 0.8;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  transition: 0.1s ease;
+}
+button:active {
+  opacity: 1;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+.sign-up-button {
+  margin: 5px auto;
+  background: #16a085;
+  text-transform: uppercase;
+}
+.facebook {
+  background: #32508E;
+}
+.twitter {
+  background: #55ACEE;
+}
+.google {
+  background: #DD4B39;
+}
+
+/**********************************************
+  end of button styling
+/**********************************************/
+
+.loginwith {
+  display: block;
+  margin-bottom: 40px;
+  font-size: 2em;
+  color: #FFF;
+  text-align: center;
+}
+.or {
+  position: absolute;
+  top: 180px;
+  left: 280px;
+  width: 40px;
+  height: 40px;
+  background: #DDD;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+```
