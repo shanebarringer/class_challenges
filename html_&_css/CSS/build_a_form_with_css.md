@@ -391,12 +391,177 @@ Let's go ahead and throw in our background picture while we're here.<br> In your
 }
 ```
 
+Refresh and take a deep breath. We're getting close!
+- - - -
+
+## Style the left
+
+Let's go ahead and knock out the styling on our left `<div>`
+
+We'll start with the `<h1>`
+
+**Type** the following code in your stylesheet:
+
+```css
+h1 {
+  margin: 0 0 20px 0;
+  font-weight: 300;
+  font-size: 2em;
+}
+```
+
+Refresh if you want to see the change
+
+**Challenge 11** - The sign-up form
+
+1. Let's start by removing that border
+2. Now apply a border to only the bottom.
+	3. give it a 1px solid bottom-border
+	4. give it the color #AAA
+5. Refresh
+6. Now, apply some margin and padding to make it look pretty
+	7. Separate the inputs by adding a bottom margin of 20px
+	8. add about 4px of padding
+9. Refresh
+10. Add some height and width
+	11. heigt of 32px
+	12. width of 220px
+13. Make the font a little stronger by giving it a weight of 400   
+
+<br>
+
+```css
+.sign-up input {
+  border: none;
+  border-bottom: 1px solid #AAA;
+  display: block;
+  margin-bottom: 20px;
+  padding: 4px;
+  width: 220px;
+  height: 32px;
+  font-weight: 400;
+}
+```
+
+Cool, things are starting to look decent. Let's go ahead and work on the button next. 
+
+**Challenge 12** - The Sign Me Up Button
+
+1. Let's properly apply spacing and width/height
+	2. give a top and bottom margin of 5px
+	3. a width of 220px
+	4. a height of 32px
+5. While we're at it, go ahead and remove the border
+6. give it a border radius of 2px
+7. Apply some color!
+	8. give the background a color of #16a085
+	9. set the text color to #FFF
+10. Finally, set the transform-text proptery to uppercase, and the font-weight to 400
+	
+<br>
+Here's what you should have so far.
+
+```css
+.sign-up-button {
+  margin: 5px auto;
+  width: 220px;
+  height: 32px;
+  border: none;
+  border-radius: 2px;
+  background: #16a085;
+  color: #FFF;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+```
+
+We also want to give the button some hover effects to call the user to action. 
+
+**Challenge 13**
+1. Using the :hover pseudo selector 
+	2. Set the opactity to 0.8
+	3. give a box shadow of  0 2px 4px rgba(0, 0, 0, 0.4)
+	4. set the transition property to 0.1s ease;
+5. Refresh and check it out
+6. Now use the :active pseudo selector to:
+	7. apply an opacity of 1
+	8. and a box shadow of 0 1px 2px rgba(0, 0, 0, 0.4)
+
+<br>
+
+```css
+.sign-up-button:hover {
+  opacity: 0.8;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  transition: 0.1s ease;
+}
+
+.sign-up-button:active {
+  opacity: 1;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+```  
+
+Let's put the finishing touches on this side.
 
 
+**Challenge 14** - Style the input on focus
+using a :focus pseudo selector on the input apply the following code:
 
+```css
+border-bottom: 2px solid #16a085;
+color: #16a085;
+transition: 0.2s ease;
+``` 
 
+At the end of your styling you should have the following code for your left `<div>`
 
- 
+```css
+h1 {
+  margin: 0 0 20px 0;
+  font-weight: 300;
+  font-size: 2em;
+}
 
+.sign-up input {
+  border: none;
+  border-bottom: 1px solid #AAA;
+  display: block;
+  margin-bottom: 20px;
+  padding: 4px;
+  width: 220px;
+  height: 32px;
+  font-weight: 400;
+  /*transition: 0.2s ease*/
+}
 
- 
+.sign-up input:focus
+ {
+  border-bottom: 2px solid #16a085;
+  color: #16a085;
+  transition: 0.2s ease;
+}
+
+.sign-up-button {
+  margin: 5px auto;
+  width: 220px;
+  height: 32px;
+  border: none;
+  border-radius: 2px;
+  background: #16a085;
+  color: #FFF;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.sign-up-button:hover {
+  opacity: 0.8;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  transition: 0.1s ease;
+}
+
+.sign-up-button:active {
+  opacity: 1;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+```
