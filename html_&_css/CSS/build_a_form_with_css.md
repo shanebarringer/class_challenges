@@ -325,8 +325,71 @@ Ahhh much better. Now we can start focusing on the right and left `<div>`'s
 
 - - - - 
 
-## Left div
+## Position the div's
 
+**Challenge 9** - Position the left `<div>`
+
+1. Give the div some padding, height and width
+	2. padding of: 40px
+	3. width of: 300px
+	4. height of: 400px
+5. Refresh your browser <br>
+
+6. Now, give the left div an absolute position
+	7. Place it at at the top/left of it's parent `<div>`
+
+	
+(You'll probably notice all sorts of weirdness happening with the right div. Just ignore it for the moment)
+
+```css
+.left {
+  padding: 40px;
+  width: 300px;
+  height: 400px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+```
+
+**Challenge 10** - Position the Right `<div>`
+
+1. Apply the same attributes ot the right div with one exception
+	1. Position the div at the top right of it's parent `<div>`
+
+<br>
+
+```css
+.left,
+.right {
+  padding: 40px;
+  width: 300px;
+  height: 400px;
+  position: absolute;
+  top: 0
+}
+
+.left {
+  left: 0;
+}
+
+.right {
+  right: 0;
+```	
+
+Thankfully, we can reuse a good bit of the code from our left div. yay!
+
+Let's go ahead and throw in our background picture while we're here.<br> In your `.right` declaration (under the `right: 0;` statement) paste the following code:
+
+```css
+.right {
+  right: 0;
+  background: url('https://goo.gl/YbktSj');
+  background-size: cover;
+  background-position: center;
+  border-radius: 0 2px 2px 0;
+}
+```
 
 
 
