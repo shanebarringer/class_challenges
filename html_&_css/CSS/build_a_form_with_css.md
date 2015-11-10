@@ -374,12 +374,18 @@ Ahhh much better. Now we can start focusing on the right and left `<div>`'s
 	3. width of: `300px`
 	4. height of: `400px`
 5. Refresh your browser <br>
+*You'll probably get something like this:*
+![part of challenge 9](../images/part_of_challenge_9.png)
 
 6. Now, give the left div an absolute position
 	7. Place it at at the top/left of it's parent `<div>`
 
 	
-(You'll probably notice all sorts of weirdness happening with the right div. Just ignore it for the moment)
+*(You'll notice all sorts of weirdness happening with the right div. Just ignore it for the moment)*
+![challenge 9](../images/challenge_9.png)
+<br>
+
+**Challenge 9 Answer:**
 
 ```css
 .left {
@@ -402,6 +408,11 @@ Ahhh much better. Now we can start focusing on the right and left `<div>`'s
 hint: see if you can refactor a little bit.*
 
 <br>
+
+**The Result:**
+![challenge 10](../images/challenge_10.png)
+
+**Challenge 10 Answer:**
 
 ```css
 .left,
@@ -435,6 +446,9 @@ Let's go ahead and throw in our background picture while we're here.<br> In your
 ```
 
 Refresh and take a deep breath. We're getting close!
+
+![with_image](../images/post_challenge_10.png)
+
 - - - -
 
 ## Style the .left
@@ -455,13 +469,17 @@ h1 {
 
 Refresh if you want to see the change
 
-**Challenge 11** - The sign-up form
+**Challenge 11** - The sign-up form inputs
 
 1. Let's start by removing that border
 2. Now apply a border to only the bottom.
 	3. give it a `1px` solid bottom-border
 	4. give it the color `#AAA`
-5. Refresh
+3. Give each input a `display` of `block` 
+5. Refresh <br>
+![challenge 11](../images/challenge_11_part_1.png)<br>
+
+
 6. Now, apply some margin and padding to make it look pretty
 	7. Separate the inputs by adding a bottom margin of `20px`
 	8. add about `4px` of `padding`
@@ -473,6 +491,11 @@ Refresh if you want to see the change
 13. Make the font a little stronger by giving it a weight of 400   
 
 <br>
+**The Result:**
+![challenge 11 complete](../images/challenge_11_complete.png)
+<br>
+
+**Challenge 11 Answer:**
 
 ```css
 .sign-up input {
@@ -503,7 +526,14 @@ Cool, things are starting to look decent. Let's go ahead and work on the button 
 10. Finally, set the `transform-text` proptery to `uppercase`, and the `font-weight` to `400`
 	
 <br>
+
+**The Result:**
+
+![challenge 12](../images/challenge_12.png)
+
 Here's what you should have so far.
+
+**Challenge 12 Answer:**
 
 ```css
 .sign-up-button {
@@ -536,6 +566,7 @@ We also want to give the button some `hover` effects to call the user to action.
 
 <br>
 
+**Challenge 13 Answer:**
 
 ```css
 .sign-up-button:hover {
@@ -635,7 +666,13 @@ h1 {
 4. Give a color of `#FFF`
 5. Center the text
 
+**This is what you're looking for:**
+![challenge 15](../images/challenge_15a.png)
+
+
 <br>
+
+**Challenge 15 Answer:**
 
 ```css
 .loginwith {
@@ -658,7 +695,12 @@ Got it! Awesome, now let's style those buttons.
 5. give a `border-radius` of `2px`
 6. set the text color to `#FFF`
 
+**The Result:**
+![challenge 15](../images/challenge_15.png)
+
 <br>
+
+**Challenge 16 Answer:**
 
 ```css
 button.social-signin {
@@ -729,7 +771,11 @@ That kept the styling of the 'left' `<button>`. Now let's add some color to the 
 	4. google class: `#DD4B39`
 5. Refresh! 
 
+**The Result:**
+![challenge 18](../images/challenge_18.png)
+
 <br>
+**Challenge 18 Answer:**
 
 ```css
 .facebook {
