@@ -71,6 +71,9 @@ We'll start by building out the body of our document and creating the form.
 *hint: You may want to check out the [Mozilla](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Forms/My_first_HTML_form) or [W3](http://www.w3schools.com/html/html_forms.asp) documentation on how to create a form*
 <br>
 
+Once complete, your index.html page should look something like this: ![challenge_4](../images/challenge_4.png)
+
+**Challenge 4 Answer:** 
 
 ```html
  <div class="left">
@@ -108,7 +111,11 @@ We'll start by building out the body of our document and creating the form.
 5. Do the same thing for Twitter and Google+
 6. close out the 'right' `<div>`
 
+The Result:
+![challenge 5](../images/challenge_5.png)
+
 <br>
+**Challenge 5 Answer:**
 
 ```html
 <div class="right">
@@ -184,6 +191,10 @@ Here's what your code should look like so far:
 </html>
 ```
 
+That should produce something like this:
+![html_complete_pre_normalize](../images/html_complete_pre_normalize.png)
+
+
 - - - - 
 
 # On to Style...
@@ -202,6 +213,13 @@ Okay, so first things first. We *need* to get rid of this awful default browser 
 	3. link the stylesheet to your index.html page
 
 <br>
+**Before and After:**
+![before_and_after](../images/with_normalize.png)
+
+
+
+
+**Challenge 6 Answer:**
 
 ```html
 <link rel="stylesheet" href="css/normalize.css" media="screen" title="no title" charset="utf-8">
