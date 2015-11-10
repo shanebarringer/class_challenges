@@ -1,15 +1,15 @@
-# Build a clone of the Google Hompage
+# Build a clone of the Google Homepage
 - - - - 
 
 **Some Advice...**
 
 - Break this up into 3 parts
-	- HTML structure
-	- Main Elements
+	- HTML structure & Main Elements
 	- Navbar
 	- Footer
+	
 - Talk with your partner and then divide and conquer 
-	- One of you tackle the HTML structure and main elements
+	- One of you tackle the HTML structure/main elements
 	- One of you complete the navbar and footer
 
 - For the main elements
@@ -27,10 +27,9 @@
 	-  This will be similar to the navbar
 	-  you'll probably have to make 2 separate lists to make it look right.
 
-
 **Other Notes**:
 
 - DONT BE A PERFECTIONIST! You're just trying to make it look like google.com (not function like it) 
 - Don't worry about spacing things exactly to the pixel. 
 - Ignore the dropdown menus, form submissions and hover-highlighting.
-- Try to do as much and you can before relying on the developer tools (or viewing the page's source code) to help you along.
+- Try to do as much and you can before relying on the developer tools (or viewing the page's source code).
