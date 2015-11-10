@@ -253,13 +253,18 @@ Next we'll work on the body.<br>
 1. Give the `body` a background color of `#DDD`
 2. Give the text a color of `#222`
 
+**Result:**
+![challenge 7](../images/challenge_7.png)
+
+<br>
+**Challenge 7 Answer:**
+
 ```css
 body {
 	background: #DDD;
 	color: #222; 
 }
 ```
-
 
 While we're at it, let's go ahead and select a font (I've already picked out Noto Sans, but feel free to experiment)
  
@@ -277,7 +282,7 @@ Right below your `*` selector apply the following:
   font-weight: 300;
 ```
 
-Which should result in the following:
+Which should result in the following code:
 
 ```css
 body {
@@ -287,6 +292,9 @@ body {
   font-weight: 300;
 }
 ```
+Here's how it will look on the web:
+![font_update](../images/challenge_7_part2.png)
+
 
 That should take care of the body. Next positioning!
 
@@ -300,8 +308,16 @@ That should take care of the body. Next positioning!
 2. Apply a `margin` of 
 	3. `5%` on the top/bottom
 	4. `auto` on the left/right
+3. Give the box a `background-color` of `#FFF`
 
 <br>
+
+**The Result you're looking for:**
+![challenge 8](../images/challenge_8_part1.png)
+
+<br>
+
+**Challenge 8 (part 1) Answer:**
 
 ```css
 #login-box {
@@ -309,24 +325,29 @@ That should take care of the body. Next positioning!
   margin: 5% auto;
 }
 ```
-Great! Even though, it doesn't look like much happened. Our Login Box is responding. 
+Great! Even though, it doesn't look like much happened. The good news is that our Login Box is responding. 
 
 **Challenge 8 (part 2)** - Now all we need to do is set a width and height and give it some style
 
 1. Set a `width` of `600px`
 2. Set a `height` of `400px`
 3. Refresh your browser and make sure the box is still responding
-4. Give the box a `background-color` of `#FFF`
-5. Assign a `border-radius` of `2px`
-6. Add some `box-shadow` and assign the following values
-	7. horizontal shadow of: `0`
-	8. vertical shadow of: `2px`
-	9. blur of: `4px`
-	10. color of: `rgba(0,0,0,0.4)`
+4. Assign a `border-radius` of `2px`
+5. Add some `box-shadow` and assign the following values
+	6. horizontal shadow of: `0`
+	7. vertical shadow of: `2px`
+	8. blur of: `4px`
+	9. color of: `rgba(0,0,0,0.4)`
 
 (*hint:* you may find [this](http://www.w3schools.com/cssref/css3_pr_box-shadow.asp) helpful for box-shadow)
 
+The Result: 
+![challenge 8 part 2](../images/challenge_8_part2.png)
+
 <br>
+
+
+**Challenge 8 (part 2) Answer:**
 
 ```css
 #login-box {
