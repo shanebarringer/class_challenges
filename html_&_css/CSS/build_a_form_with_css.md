@@ -76,7 +76,7 @@ We'll start by building out the body of our document and creating the form.
  <div class="left">
   	<h1>Create Account</h1>
   	
-	<form class="sign-up" action="index.html" method="post">
+  	<form class="sign-up" action="index.html" method="post">
 	  
 	  <input type="text" name="username" placeholder="Username" />
 	  <input type="text" name="email" placeholder="E-mail" />
@@ -112,12 +112,13 @@ We'll start by building out the body of our document and creating the form.
 
 ```html
 <div class="right">
-  <span class="loginwith">Sign in with
-    <br />social network</span>
+
+  <span class="loginwith">Sign in with <br> social network</span>
 
   <button class="social-signin facebook">Log in with facebook</button>
   <button class="social-signin twitter">Log in with Twitter</button>
   <button class="social-signin google">Log in with Google+</button>
+
 </div>
 ```     	 
 - - - - 
@@ -241,7 +242,6 @@ body {
 }
 ```
 
-<br> 
 
 While we're at it, let's go ahead and select a font (I've already picked out Noto Sans, but feel free to experiment)
  
@@ -258,7 +258,6 @@ Right below your `*` selector apply the following:
   font-family: 'Noto Sans', sans-serif;
   font-weight: 300;
 ```
-<br>
 
 Which should result in the following:
 
