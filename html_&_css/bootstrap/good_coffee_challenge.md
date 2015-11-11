@@ -238,3 +238,136 @@ Now that we have everything setup, go ahead and refresh your page.
 You'll notice that our page has been 'normalized' (or reset). A browser reset is baked into bootstrap. yay!
 
 - - - - 
+
+## Nav
+
+Okay... that navbar has to change... like... now... <br>
+So, let's do that.
+
+**Challenge 5 (part 1):** - Bootstrap Nav
+
+1. Go to the [navbar](http://getbootstrap.com/components/#navbar) section of bootstrap's documentation.
+2. READ
+3. Start with applying the basic navbar to our site. <br> *(Don't worry about the content right now)*
+
+Here's what it should look like:
+![gc_5_1](../images/gc_5_part1.png)
+
+**Challenge 5 (part 1) Answer:**
+
+Nothing magical here. All you have to do is copy and paste directly from the boostrap site.
+![](../images/gob_magic.gif)
+
+Now let's add our custom  links and make some slight modifications. 
+
+**Challenge 5 (part2)** - Customize the navbar
+
+1. Find and change 'Brand' to the name of the company
+2. Find and replace the two 'Links' on the left with:
+	3. Coffee
+	4. Mission
+	5. Refresh
+	*here's what you should have:*
+	![](../images/gc_nav_1.png)
+5. Now, remove the left dropdown menu and `<form>` (search bar and submit button)
+6. modify the items on the right to say:
+	7. Fair Trade
+	8. Coffee Gear
+9. Invert the color  
+
+**The Result:**
+![](../images/gc_nav_2.png)
+
+**Challenge 5 (part 2) Answer:**
+
+```html
+<body>
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Good Coffee</a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Coffee <span class="sr-only">(current)</span></a></li>
+          <li><a href="#">Mission</a></li>
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#">Fair Trade</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Coffee Gear <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">Separated link</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+  </nav>
+```    
+ 
+ 
+  
+  Go ahead and delete the original nav (as we no longer need it).
+
+- - - - 
+
+## Font
+
+I've already picked out a font from google fonts, so let's go ahead and add that into our project
+
+In the `<head	>` of your html document, paste the following:
+
+```html
+  <!-- font family below -->
+  <link href="http://fonts.googleapis.com/css?family=Muli|Raleway:400,500,700|Yanone+Kaffeesatz" rel="stylesheet" type="text/css">
+```
+
+In your main.css file, type the following: 
+
+```css
+body {
+  font-family: 'Raleway', 'sans-serif'
+}
+```
+
+![](../images/gc_font.png)
+
+- - - -
+
+
+## Color Scheme
+
+I've also picked out a color scheme (feel free to change it up)
+
+We'll be using `#A2DED0` as our primary color.<br>
+`#323232` and `#D645651` will be our secondary colors. 
+
+Go ahead and apply the primary color to the background of our `<body>`. 
+
+```css
+background-color: #A2DED0;
+```
+
+![](../images/gc_primary_color.png)
+
+Okay, it's already starting to feel better. Next up. the hero image!
+
+- - - -
+
