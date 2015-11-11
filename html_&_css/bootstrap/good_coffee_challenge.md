@@ -427,16 +427,17 @@ At this point, your page should should look like:
 
 11. Now we need to style the `<h1>`
 	12. set the `position` to absolute
-	13. move it 0 left and 18 from the top
-	14. assign left padding of 20px
-	15. give the font a color of `#F7FAFE`
-	16. Save and refresh!
+	13. move it 0 left
+	14. assign a top margin of -10px
+	15. assign left padding of 20px
+	16. give the font a color of `#F7FAFE`
+	17. Save and refresh!
 
 You should have something like this:
 
 ![](../images/gc_jumbotron_complete.png)
 
-The header isn't exactly where we want it. but let's keep moving (we can tweak later)
+
 
 **Challenge 6 (part 2) Answer:** 
 
@@ -454,8 +455,8 @@ The header isn't exactly where we want it. but let's keep moving (we can tweak l
 
 .jumbotron h1 {
 	position: absolute;
-	top:18;
 	left:0;
+	margin-top: -10px;
 	padding-left: 20px;
 	color: #F7FAFE;
 }
@@ -876,7 +877,7 @@ body {
 }
 .jumbotron h1 {
   position: absolute;
-  top: 18;
+  margin-top: -10px;
   left: 0;
   padding-left: 20px;
   color: #F7FAFE;
