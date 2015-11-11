@@ -665,3 +665,235 @@ footer p {
 ```
 
 That's it! you've created a site using bootstrap!
+
+
+
+- - - - 
+
+## Extra Credit
+
+Let's create a modal 
+
+- Check out the [modal](http://getbootstrap.com/javascript/#modals) section in bootstrap's docs.
+- Inside your navbar, paste the appropriate modal code after your 'Fair Trade' `<li>`
+- Change the id from myModal to videoModal 
+- In your Fair Trade`<li>`
+	- Create a `data-toggle` attribute with the value of "modal"
+	- Crate a `data-target` attribute with the value of "#videoModal"
+- Remove the title, button and footer
+- Inside the modal body place the following code: `<iframe width="100%" height="350"src="http://www.youtube.com/embed/7K4G5-ydhS0"></iframe>`
+- Add some comments above and below your modal (signifying start and end) for better readability.
+
+That's it! now you should have a fancy Fair Trade modal. 
+
+![](../images/gc_modal.png)
+
+**The Code:**
+
+```html
+    <li><a href="#" data-toggle="modal" data-target="#videoModal">Fair Trade</a>
+	    <!-- BEGIN Modal -->
+	    <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="videoModalLabel" aria-hidden="true">
+	      <div class="modal-dialog">
+	        <div class="modal-content">
+	          <div class="modal-body">
+	            <iframe width="100%" height="350" src="http://www.youtube.com/embed/7K4G5-ydhS0"></iframe>
+	          </div>
+	        </div>
+	      </div>
+	    </div>
+	  </li>
+     <!-- END MODAL -->
+```
+- - - -
+
+
+**Final html**
+
+```html
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+
+  <!-- font family below -->
+  <link href="http://fonts.googleapis.com/css?family=Muli|Raleway:400,500,700|Yanone+Kaffeesatz" rel="stylesheet" type="text/css">
+
+  <link rel="stylesheet" href="css/main.css" media="screen" title="no title" charset="utf-8">
+
+  <title>Good Coffee</title>
+
+</head>
+
+<body>
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Good Coffee</a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Coffee <span class="sr-only">(current)</span></a></li>
+          <li><a href="#mission">Mission</a></li>
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#" data-toggle="modal" data-target="#videoModal">Fair Trade</a>
+            <!-- Modal -->
+            <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="videoModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-body">
+                    <iframe width="100%" height="350" src="http://www.youtube.com/embed/7K4G5-ydhS0"></iframe>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <!-- END MODAL -->
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Coffee Gear <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">Separated link</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+  </nav>
+
+  <div class="jumbotron">
+    <h1> Good Coffee Co.</h1>
+  </div>
+
+  <div class="mission">
+    <a name="mission"></a>
+    <h3> Here at Good Coffee Co we are passionate about serving the best coffee you'll ever taste.
+      <br> Our staff are self-described coffee-nerds with impeccable technique.
+      <br> Stop by today and experience the Good Coffee difference. </h3>
+  </div>
+
+
+  <div class="container features">
+    <div class="row">
+      <div class="col-sm-4">
+        <img class="img-responsive" src="images/coffee_beans.jpg" alt="coffee beans" />
+        <p> The freshest locally sourced coffee. Organic and Fair Trade certified</p>
+      </div>
+
+
+      <div class="col-sm-4">
+        <img class="img-responsive" src="images/coffee_shop.jpg" alt="coffee shop" />
+        <p> A perfect environment to meet with a friend or be alone and get work done.</p>
+      </div>
+      <div class="col-sm-4">
+        <img class="img-responsive" src="images/espresso.jpg" alt="espresso">
+        <p> Quality hand-crafted espresso shots pulled with the greatest of care.</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; Good Coffee Co. 2015</p>
+    <ul>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Location</a></li>
+      <li><a href="#">Coffee</a></li>
+    </ul>
+  </footer>
+
+  <!-- Latest jQuery (without OldIE support-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
+```
+
+**Final css**
+
+```css
+body {
+  font-family: 'Raleway', 'sans-serif';
+  background-color: #A2DED0;
+}
+.jumbotron {
+  background-image: url("../images/Drip_Coffee_Bangkok.jpg");
+  padding: 20%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  margin-top: -40px;
+  background-attachment: fixed;
+  background-position: center -238px;
+}
+.jumbotron h1 {
+  position: absolute;
+  top: 18;
+  left: 0;
+  padding-left: 20px;
+  color: #F7FAFE;
+}
+.mission {
+  background-color: #323232;
+  color: #F7FAFE;
+  margin-top: -30px;
+}
+.mission h3 {
+  padding: 5% 10%;
+  text-align: center;
+}
+.features {
+  padding: 5% 0;
+}
+.features p {
+  font-family: 'Muli' 'sans-serif';
+  text-align: center;
+  color: #323232;
+  font-size: 1.2em;
+  padding-top: 10px;
+}
+footer {
+  background-color: #D64541;
+  position: absolute;
+  width: 100%;
+  height: auto;
+}
+footer ul li {
+  display: inline-block;
+  list-style: none;
+  padding: 2%;
+  float: right;
+}
+footer p {
+  float: left;
+  padding: 2%;
+}
+footer a, footer p {
+  color: #fff;
+  vertical-align: middle;
+}
+```
