@@ -167,7 +167,7 @@ Well... that's for you to figure out...
 ![](../images/evil_laugh.gif)
 
 
-**Challenege 4** Install Bootstrap
+**Challenge 4** Install Bootstrap
 
 There are several ways to include bootstrap in your project. Which one is correct? Well... it depends on the project. We are going to use a CDN (content delivery network) which is my preferred method and will work fine for this project. 
 
@@ -193,11 +193,13 @@ There are several ways to include bootstrap in your project. Which one is correc
 Let's go ahead and install JavaScript as well.<br>
 Below your `<footer>` paste the following:
 
+
 ```html
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
 <!-- Latest jQuery (without OldIE support-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
 ```
 
 One more thing... this doesn't necessarily relate to bootstrap, but let's go ahead and create our main stylesheet (for custom styling). And you know how we roll, so go ahead and do all of this from the command line. 
@@ -612,4 +614,54 @@ You should see something like this:
 }
 ```
 
+- - - - 
 
+#The Footer
+
+Unlike most of our other items. The majority of our footer work is going to be completed through css. Ugh! I know...
+
+**Challenge 11**
+
+1. Position and Color:
+	2. Set the background color to: `#D64541`
+	3. Set a position of absolute
+	4. width = 100%
+	5. set the height to auto (to take care of unforseen viewport issues)
+		![](../images/gc_11_1.png)
+6. Style each list item
+	7. Set the display to inline-block
+	8. strip the bullets off of each list item
+	9. set a padding of 2% all-around
+	10. float these items to the right
+		![](../images/gc_11_2.png)
+11. Float each paragraph left and give a padding of 2%
+12. For the links and paragraphs
+	13. set the vertical alignment to middle
+	14. change the text-color to `#fff`
+15. Save and refresh!
+
+**The Result:**
+
+![](../images/gc_11_3.png)
+
+
+**Challenge 11: Answer**
+
+```css
+
+footer p {
+	float: left;
+	padding: 2%;
+}
+
+footer a,
+footer p {
+
+	color:#fff;
+	vertical-align: middle;
+
+
+}
+```
+
+That's it! you've created a site using bootstrap!
