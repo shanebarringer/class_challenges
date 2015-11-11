@@ -371,3 +371,245 @@ Okay, it's already starting to feel better. Next up. the hero image!
 
 - - - -
 
+## Jumbotron
+
+If you look at most well-designed websites, you'll see some kind of hero image and/or captivating header at the top of the page. This is often called a hero image. In bootstrap we'll use the `.jumbotron` class to style our hero image. 
+
+First let's start with a picture. You can use [this URL](https://upload.wikimedia.org/wikipedia/commons/6/62/Drip_Coffee_Bangkok.jpg) and link to it directly in your CSS. Or create an images directory and store the image there. <br> I would prefer for you to do choose the second option
+
+**Challenge 6 (part 1)** - Create an image directory and display your hero image
+
+1. Just like we created the css directory. Create an images directory
+2. Assign the `class` "jumbotron" to the `<div>` surrounding your `<h1>`
+3. In your css, use the `background-image` property to display the hero image. 
+*(hint: use [css documentation](http://www.w3schools.com/cssref/pr_background-image.asp) if you need help with the background image*)
+
+Don't worry about how this looks at the moment. In part 2, we'll style it. 
+
+**Challenge 6 (part 1) Answer**
+
+From your project root run: `$ mkdir images`
+
+In your html:
+
+```html
+<div class="jumbotron">
+  <h1> Good Coffee Co.</h1>
+</div>
+```
+
+In your css:
+
+```css
+.jumbotron {
+  background-image: url("../images/Drip_Coffee_Bangkok.jpg");
+}
+```
+
+If you refresh... it isn't pretty. let's fix that.
+
+**Challenge 6 (part2)** - Style your hero image
+
+1. For the image... within the `.jumbotron` declaration:
+	2. set the `background-repeat` to no-repeat
+	3. set the `background-size` to cover
+	4. assign a `width` of 100%
+5. Position the image 
+	6. draw the top margin up by 40px
+	7. padding (on all sides) = 20%
+	8. `background-attachment` = fixed
+	9. `background-position` = center -238px
+	10. Save and Refresh!
+At this point, your page should should look like: 
+![](../images/gc_jumbotron_2_incomplete.png)
+
+11. Now we need to style the `<h1>`
+	12. set the `position` to absolute
+	13. move it 0 left and 18 from the top
+	14. assign left padding of 20px
+	15. give the font a color of `#F7FAFE`
+	16. Save and refresh!
+
+You should have something like this:
+
+![](../images/gc_jumbotron_complete.png)
+
+The header isn't exactly where we want it. but let's keep moving (we can tweak later)
+
+**Challenge 6 (part 2) Answer:** 
+
+```css
+.jumbotron {
+	background-image: url("../images/Drip_Coffee_Bangkok.jpg");
+	padding: 20%;
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 100%;
+	margin-top: -40px;
+	background-attachment: fixed;
+	background-position:  center -238px;
+}
+
+.jumbotron h1 {
+	position: absolute;
+	top:18;
+	left:0;
+	padding-left: 20px;
+	color: #F7FAFE;
+}
+```
+
+- - - -
+
+## Mission 
+
+Let's talk about containers for a moment. <br>
+With most web design, you're going to want to establish very clear containers for groups of elements. `<div>`'s serve for this purpose. However, what about when you want to group a set of `<div>`'s together? 
+
+Your best bet is to establish a container `<div>`
+
+So, we're going to create a some containers. 
+
+**Challenge 7**
+
+1. Add a class of 'container-fluid' to your 'mission' `<div>`
+2. Nest a `<div>` with the class of 'row'
+3. Move your `<h3>` inside of the 'row' `<div>`
+4. above your `<h3>` paste the following code `<a name="mission"></a>`<br> (this allows us to navigate around the page)
+5. Style the mission `<div>`!
+	6. Set the background color to `#323232`
+	7. Set the text color to `#F7FAFE`
+	8. Move the top margin up by 30px
+9. Specifically style the `<h3>`
+	10. set a padding of 5% top/bottom and 10% left/right
+	11. center the text
+
+**The Result:**
+
+![](../images/gc_7.png)
+
+**Challenge 7 Answer:**
+
+in your index.html:
+
+```html
+<div class="mission">
+    <h3> Here at Good Coffee Co we are passionate about serving the best coffee you'll ever taste.
+    <br> Our staff are self-described coffee-nerds with impeccable technique.
+    <br> Stop by today and experience the Good Coffee difference. 
+    </h3>
+</div>
+```
+
+in your main.css:
+
+```css
+.mission {
+	background-color: #323232;
+	color: #F7FAFE;
+	margin-top: -30px;
+}
+
+.mission h3 {
+	padding: 5% 10% ;
+	text-align: center;
+}
+```
+
+Next up the Grid!
+
+## The Grid
+
+One of the best features of using front-end frameworks is [the grid system](http://getbootstrap.com/css/#grid). Grid's allow for much easier positioning than working with standard css positioning. 
+
+The concept is simple...
+<br>
+Divide the page into 12 columns. and then move content along those columns. This makes laying out your content incredibly simple (and helps with responsive design). So it's a win-win.
+
+**Challenge 8**
+
+1. Take 2 minutes and read the [Introduction](http://getbootstrap.com/css/#grid) to bootstrap's grid. 
+2. Add the container class to your features `<div>`
+3. Nest your existing `<div>`'s within a row class
+4. Wrap each `<p>` in it's own `<div>`
+5. Using bootstrap's grid. make each `<div>` (within the row) span 4 columns on small devices. 
+
+**The Result:**
+
+![](../images/gc_8.png)
+
+**Challenge 8 Answer:**
+
+```html
+<div class="container features">
+    <div class="row">
+      <div class="col-sm-4">
+        <p> The freshest locally sourced coffee. Organic and Fair Trade certified</p>
+      </div>
+      <div class="col-sm-4">
+        <p> A perfect environment to meet with a friend or be alone and get work done.</p>
+      </div>
+      <div class="col-sm-4">
+        <p> Quality hand-crafted espresso shots pulled with the greatest of care.</p>
+      </div>
+    </div>
+  </div>
+```
+
+We're getting there! 
+
+Let's go ahead and add the images. 
+
+**Challenge 9** - Feature Images
+
+1. Add these pictures to your images folder 
+	2. [coffee_beans](http://upload.wikimedia.org/wikipedia/commons/3/3f/Coffee_Beans.jpg)
+	3. [coffee_shop](http://pixabay.com/static/uploads/photo/2014/07/15/13/36/coffee-shop-393954_640.jpg)
+	4. [espresso](http://pixabay.com/static/uploads/photo/2013/11/05/23/55/coffee-206142_640.jpg) 
+5. In the html, create an `<img>` tag for each div (containing a paragraph) and change `src` attribute to display your new images.
+6. Save and refresh
+
+Got it?
+
+Yeah... it's bad... real bad... the images are being displayed at their stock resolution. Thankfully, bootstrap offers a class that easily fixes this to make the images respond to the grid.
+
+simply assign the class 'img-responsive' to your `<img>` element like so: `<img class="img-reponsive">`
+
+Afterwards. Your page should look like this: 
+
+![](../images/gc_9.png)
+
+Nice! Now we just need to add a touch of styling and this container is good-to-go!
+
+**Challenge 10** - Style the features container. 
+
+1. Set the features' container padding to 5% top/bottom and 0 left/right
+2. For the paragraphs:
+	3. Change the font to 'Muli' with a fallback of 'sans-serif'
+	4. align the text to center
+	5. set the font size to 1.2em
+	6. give a top padding of 10px 
+	7. change the color to #323232
+8. Save and refresh
+
+You should see something like this:
+
+![](../images/gc_10.png) 
+
+**Challenge 10 Answer:**
+
+```css
+.features {
+	padding: 5% 0;
+}
+
+.features p {
+	font-family: 'Muli' 'sans-serif';
+	text-align: center;
+	color: #323232;
+	font-size: 1.2em;
+	padding-top: 10px;
+}
+```
+
+
