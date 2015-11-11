@@ -672,6 +672,28 @@ That's it! you've created a site using bootstrap!
 
 ## Extra Credit
 
+Animate!
+
+- Go checkout [animate.css](https://daneden.github.io/animate.css/)
+- Download the file and move it into your project (place it inside the css directory)
+- link your index.html to the new stylesheet (make sure to place it under your main.css link)
+- add the value 'animated fadeInDown' to your `<h1>`
+
+**The Code:**
+
+to link:
+```html
+  <link rel="stylesheet" href="css/animate.css" media="screen" title="no title" charset="utf-8">
+```
+
+to implement:
+
+```html
+<div class="jumbotron">
+    <h1 class="animated fadeInDown"> Good Coffee Co.</h1>
+</div>
+```
+
 Let's create a modal 
 
 - Check out the [modal](http://getbootstrap.com/javascript/#modals) section in bootstrap's docs.
@@ -725,6 +747,7 @@ That's it! now you should have a fancy Fair Trade modal.
   <link href="http://fonts.googleapis.com/css?family=Muli|Raleway:400,500,700|Yanone+Kaffeesatz" rel="stylesheet" type="text/css">
 
   <link rel="stylesheet" href="css/main.css" media="screen" title="no title" charset="utf-8">
+  <link rel="stylesheet" href="css/animate.css" media="screen" title="no title" charset="utf-8">
 
   <title>Good Coffee</title>
 
@@ -783,7 +806,7 @@ That's it! now you should have a fancy Fair Trade modal.
   </nav>
 
   <div class="jumbotron">
-    <h1> Good Coffee Co.</h1>
+    <h1 class="animated fadeInDown"> Good Coffee Co.</h1>
   </div>
 
   <div class="mission">
@@ -831,6 +854,7 @@ That's it! now you should have a fancy Fair Trade modal.
 </body>
 
 </html>
+
 ```
 
 **Final css**
