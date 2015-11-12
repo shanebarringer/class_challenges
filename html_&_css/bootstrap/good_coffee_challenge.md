@@ -566,7 +566,7 @@ Let's go ahead and add the images.
 **Challenge 9** - Feature Images
 
 1. Add these pictures to your images folder 
-	2. [coffee_beans](http://upload.wikimedia.org/wikipedia/commons/3/3f/Coffee_Beans.jpg)
+	2. [coffee_beans](https://pixabay.com/static/uploads/photo/2014/07/11/22/58/coffee-390729_640.jpg)
 	3. [coffee_shop](http://pixabay.com/static/uploads/photo/2014/07/15/13/36/coffee-shop-393954_640.jpg)
 	4. [espresso](http://pixabay.com/static/uploads/photo/2013/11/05/23/55/coffee-206142_640.jpg) 
 5. In the html, create an `<img>` tag for each div (containing a paragraph) and change `src` attribute to display your new images.
