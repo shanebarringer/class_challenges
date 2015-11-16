@@ -328,6 +328,7 @@ favorite === "ruby" ? console.log("ruby is still my favorite language") : consol
 **Dig Deeper**
 
 - [YDKJS - Blocks and Conditionals](https://github.com/getify/You-Dont-Know-JS/blob/master/up%20&%20going/ch1.md#blocks)
+- [YDKJS - More Advanced Conditionals](https://github.com/getify/You-Dont-Know-JS/blob/master/up%20&%20going/ch2.md#conditionals)
 
 - - - - 
 
@@ -409,4 +410,308 @@ for (bottle; bottle >= 0; bottle --){
 ```
 
 The `for` loop works with also works with arrays (which we'll get into shortly)
+- - - -
 
+
+## Arrays
+
+As you dig deeper in programming you'll discover that arrays are everywhere. 
+
+Thankfully, arrays in JS are very similar to arrays in ruby.
+
+You declare an array like so:
+
+```javascript
+var students = ['paul', 'emily', 'dylan'];
+```
+
+Accessing array items 
+
+```javascript
+var x = students[0]; // "paul"
+var y = students[1]; // "emily"
+```
+
+updating array items 
+
+```javascript
+students[0] = "Paul"; 
+students[0]; // "Paul"
+```
+
+Editing Arrays
+
+```javascript
+//Add item to an array
+
+var teachers = ['Shane', 'Lee'];
+teachers[2] = 'Zack'; // ['Shane', 'Lee', 'Zack'];
+teachers[4] = 'Cam Newton'; // ['Shane', 'Lee', 'Zack', undefined, 'Cam Newton'];
+
+
+//Push, pop, shift and unshift - like a pez dispenser (and just like ruby)
+
+var teachers = ['Shane', 'Lee'];
+teachers.push('Zack'); //['Shane', 'Lee', 'Zack']
+
+var teacher1 = teachers.pop(); //teacher1 == 'Zack', teachers == ['Shane', 'Lee']
+teachers.unshift('Zack'); // ['Zack', Shane', 'Lee']
+
+var teacher2 = teachers.shift(); //teacher2 == 'Zack', teachers = ['Shane', Lee']
+
+//Slicing and splicing
+var a = [1,2,3,4];
+a.slice(0,2); //[1,2]
+a.splice(1,0,'a','b'); //dumbest API ever
+```
+
+There are *lots* of other array operations. Check out the dig deeper section for more examples. 
+
+#### Array Iteration
+
+As hinted at earlier, you can use a `for` loop to iterate over an array:
+
+```javascript
+var teachers = ['Shane', 'Lee', 'Zack']
+for(var i = 0; i < teachers.length; i++) {
+    console.log(teachers[i]);
+}
+```
+*note: also, make sure to checkout the forEach loop*
+
+**Dig Deeper**
+
+[YDKJS - Arrays](https://github.com/getify/You-Dont-Know-JS/blob/master/up%20&%20going/ch2.md#arrays)
+
+- - - -
+
+## Objects
+
+While JavaScript is not Object Oriented (in theory), you can still create objects. and interestingly enough they operate almost identical to a Ruby `hash`. 
+
+```javascript
+var cohort = {
+    name: 'Code Immersion',
+    awesome: true,
+    teacher: "Shane"
+}
+```
+
+#### Addressing Objects
+
+Object properties can be referenced in two ways. The more common *dot* notation, or *bracket* notation, which is useful if you have a property name saved in a string.
+
+```javascript
+cohort.name
+// or
+cohort['name']
+```
+
+A more complex example of an object 
+
+```javascript
+var cohort = {
+    name: 'Code Immersion',
+    awesome: true,
+    teachers: ['Shane', 'Zack'],
+    students: [
+        {
+            name: 'Renee',
+            computer: {
+                OS: 'Linux',
+                type: 'laptop'
+         		}
+        },
+        {
+            //...
+        }
+    ]
+};
+
+cohort.students[0].computer.OS; // 'Linux'
+```
+
+
+#### Mutation
+
+Properties of objects can also mutated after an object has been created
+
+```javascript
+cohort.name = "Code Immersion with Ruby"
+```
+
+You can also assign entirely new keys, delete existing ones.
+
+```javascript
+cohort.fun = true; //add a property
+delete cohort.name; //remove one
+```
+
+**Dig Deeper**
+
+[YDKJS - Objects](https://github.com/getify/You-Dont-Know-JS/blob/master/up%20&%20going/ch2.md#objects)
+
+- - - - 
+
+## Functions
+
+Functions in JS === Methods in Ruby
+
+However, Functions are first-class citizens (as JS is a *functional* language)
+
+**Ruby Method:**
+
+```ruby
+def addem(x, y)
+	x + y
+end
+```
+
+**JS Function:**
+
+```javascript
+function addem(x,y){
+	return x + y;
+}
+```
+
+Basically, functions are defined by using the `function` keyword. The block (to be executed when the function is called) is wrapped in curly braces. 
+
+#### Functions are OBJECTS
+
+Functions are first class Objects in JavaScript. This means they can be instantiated, assigned, reassigned, and passed around just like any other variable.
+
+```javascript
+var greet = function(name){
+ console.log("hi " + name);
+}
+```
+
+The passing of a function into another function as parameter is a critical pattern in JS.
+
+```javascript
+var sayHi = function() {
+    console.log('Hiiiiiiiii!!!!!')
+}
+
+setTimeout(sayHi, 2000); // calls the greet function after 2 seconds
+```
+
+This pattern is HEAVILY used in JS to handle asynchronous events. For example, in a web application, you might create a function and tell JS to run it when a button is clicked.
+
+
+**Challenge 3:** Tip Calculator
+
+Remember that tip calculator you created in Ruby? Let's create one on JS!
+
+- Create a tip calculator factors in a 20% gratuity
+- Use a popup to capture the user's bill amount (pre-tip)
+- Convert that input to a number 
+- Log the total with tip to the screen.
+
+
+**Challenge 3 Answer:**
+
+```javascript
+function grat(){
+  return Number(amount) * 0.2;
+ }
+
+ function totalWithTip(){
+  return Number(amount) + grat();
+ }
+
+ var amount = prompt("Hi! what was the total of your bill?");
+ console.log("Your total amount is: " + totalWithTip());
+```
+
+Now, let's add a `$` amount to the result 
+
+```javascript
+function grat(){
+  return Number(amount) * 0.2;
+ }
+
+ function totalWithTip(){
+  return Number(amount) + grat();
+ }
+
+function formatAmount() {
+    return "$" + totalWithTip().toFixed( 2 );
+}
+
+ var amount = prompt("Hi! what was the total of your bill?");
+ console.log("Your total amount is: " + formatAmount());
+```
+
+All, we're doing is simply adding a `formatAmount` function and calling it in our `console.log` statement. 
+
+
+#### This
+
+Think of a function as a piece of paper with instructions, a procedure of sorts. One of those instructions might say "touch your nose". But who is this "you" it speaks of? Obviously, the person executing the instructions. Similarly, the keyword 'this' refers to the object that's executing the function
+
+```javascript
+var teacher = {
+    name: 'Shane',
+    sayName: function() {
+        console.log(this.name);
+    }
+}
+teacher.sayName(); // "Shane"
+```
+Different objects can execute the same function and produce different results because *this* is different.
+
+```javascript
+var teacher2 = {
+    name: 'Zack',
+    sayName: teacher.sayName
+}
+teacher2.sayName(); // "Zack
+```
+
+- - - -
+
+## Scope
+
+Scope is the set of variables a piece of code has access to. Functions create scope, and nothing else does. This has many, many implications and is a critical concept in JavaScript:
+
+Parameters and variables declared inside a function are LOCAL to that function's scope
+
+```javascript
+function getGreeting(name) {
+    var greeting = "hello ";
+    return greeting + name;
+}
+getGreeting('Shane'); // 'Hello Shane'
+console.log(greeting) //undefined
+```
+
+Blocks DO NOT have their own scope
+
+```javascript
+for(var i = 0; i < 10; i++) {
+    var x = i;
+}
+
+console.log(i,x); //9,9
+```
+
+Scope lets you create private variables in a JS program, but be careful, variables defined without the 'var' keyword are global.
+
+```javascript
+function greet(name) {
+    greeting = "hello ";
+    return greeting + name
+}
+greet('Shane');
+greeting //'hello'!
+```
+
+- - - -
+
+## JS in the browser
+
+- - - -
+
+## The DOM
