@@ -162,9 +162,154 @@ typeof greet; // "string"
 var x = 25;
 typeof x; // "number"
 
+// you're familiar with boolean values from Ruby
+var x = true
+typeof x; // "boolean"
+
 ```
 
 There are up to 7 types that can be returned by the typeof operator. You can find the rest in [Kyle Simpson's writeup on Values and Types](https://github.com/getify/You-Dont-Know-JS/blob/master/up%20&%20going/ch2.md#values--types). Go read that before continuing this lesson. 
 
+**Dig Deeper**
+
+- Did you read Kyle's writeup yet? if not... go do it now!
+
 - - - -
+
+## Null and Undefined
+
+I don't want to get too far into the weeds here, but it's probably a good time to take a quick look at `undefined` and `null`
+
+According to the [Mozilla Documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined)
+> A variable that has not been assigned a value is of type undefined.
+
+```javascript
+var something;
+typeof something // "undefined"
+```
+ 
+According to [Ajay Matharu](http://www.ajaymatharu.com/javascript-difference-between-undefined-and-null/)
+> On the other hand, null is an assignment value. It can be assigned to a variable as a representation of no value.
+
+(slightly modified) code sample from [Mozilla Documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null):
+
+```javascript
+// foo does not exist, it is not defined and has never been initialized:
+foo
+// "ReferenceError: foo is not defined"
+
+// foo is known to exist now but it has no type or value:
+var foo = null; foo
+// "null"
+```
+
+Don't spend too much time on `null` at the moment. It will become clear when the time arises to use it. 
+
+
+**Dig Deeper**
+
+- Read all of the above links :)
+- [StackOverflow Explanation](http://stackoverflow.com/questions/5076944/what-is-the-difference-between-null-and-undefined-in-javascript)
+
+- - - -
+
+## Equality ? 
+
+As in Ruby, most (if not all) of the standard operators are available for you to use freely. yay!
+
+Branching in JS works very similar to branching in JS:
+
+**Ruby version:**
+
+```ruby
+cups = 1
+
+if cups < 3
+	puts "Yes. I'll take another cup of coffee!"
+else
+	puts "I think I'm okay for now"
+end
+```
+
+****
+
+```javascript
+var cups = 1
+
+if(cups < 3){
+	console.log("Yes. I'll take another cup of coffee!");
+} else {
+	console.log("I think I'm okay for now.");
+}
+```
+
+The usual suspects:
+
+- `>`
+- `<`
+- `>=`
+- `<=`
+- `!=`
+- `==`
+- `||`
+- `&&`
+
+
+A few new additions:
+
+- `===`
+- `!==`
+
+
+#### === ???
+
+Yes, JS has a triple `=` equality operator. So, what's the difference? 
+
+Taking into account what you just learned about `type`...<br>
+The double equals `==` tries to ignore the `type` when comparing. While the triple equals `===` evaluates `type` along with any other comparisions being made. <br>
+These are called loose and strict equality checks. To avoid trouble, get in the habit of using the `strict equality` operator 
+
+```javascript
+var x = 10;
+//Type coersion!
+if(x == '10') {
+    console.log(true); //true
+}
+
+if(x === '10') {
+    console.log(true); //false
+}
+```
+
+
+#### Truthy and Falsey Values
+
+Like Ruby, only a handful of values evaluate to false (falsey) (by default)
+
+Those valeus are: `false`, `0`, `null` and `undefined`
+
+```javascript
+var whatever;
+if(false || 0 || null || whatever) {
+    console.log(true)
+} else {
+    console.log(false);
+}
+```
+
+Pretty much any other value (or object) in JS is `true` (or truthy)
+
+```javascript
+if('abc') {
+    //true
+}
+
+if(10 && 'abc' && true) {
+    //true
+}
+```
+
+- - - - 
+
+## Iteration
 
