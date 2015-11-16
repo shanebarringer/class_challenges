@@ -243,6 +243,8 @@ if(cups < 3){
 }
 ```
 
+*sidenote:* JS uses `else if` where ruby uses `elsif`
+
 The usual suspects:
 
 - `>`
@@ -309,7 +311,102 @@ if(10 && 'abc' && true) {
 }
 ```
 
+oh! good news! the JS ternary operator in almost exactly like the Ruby ternary operator. yay!
+
+```ruby 
+favorite = "ruby"
+
+favorite == "ruby" ? puts("ruby is still my favorite language") : puts("I need to re-evaluate my life choices")
+```
+
+```javascript
+var favorite = "ruby";
+
+favorite === "ruby" ? console.log("ruby is still my favorite language") : console.log("I need to re-evaluate my life choices");
+```
+
+**Dig Deeper**
+
+- [YDKJS - Blocks and Conditionals](https://github.com/getify/You-Dont-Know-JS/blob/master/up%20&%20going/ch1.md#blocks)
+
 - - - - 
 
 ## Iteration
+
+There are 2 main types of iteration in JS, the `while` loop and the `for` loop. 
+
+#### The while loop
+
+Interestingly enough, the `while` loop is very similar to Ruby's implementation. 
+
+Ruby **while** loop	
+
+```ruby
+x = 0
+
+while x < 10 do 
+	puts "#{x}"	
+	x += 1
+end
+
+```
+
+JS **while** loop
+
+```javascript
+var x = 0;
+
+while(x < 10) {
+	console.log(x);    
+	x += 1;
+}
+```
+
+#### The for loop
+
+In Ruby, (as you know) there are several handy methods that perform iterations for us. In JavaScript those methods don't exist. However, like many other programming languages. JS offers the ever-veristale and super-handy `for` loop. 
+
+Let's take a look at the same loop above constructed with `for`
+
+```javascript
+
+for (var i = 0; i <= 9; i ++) {
+    console.log( i );
+}
+```
+
+Let's work through each part of the loop. 
+
+within the parentheses, there are 3 key things happening: 
+
+1. We are **setting** a variable's value (in this case, to 0)
+2. We are **comparing** the variable's value to the desired break-point
+3. we are **incrementing** tha value of the variable on each iteration
+
+
+**Challenge 2** - 99 Bottles
+
+- Using a `for` loop.
+- Write a simple version of "99 bottles of beer on the wall"<br>
+(note: make sure you're logging the result to the console)
+- Once you get the program running, log "Hey! We need more beer!" to the console when your counter hit's 0
+
+
+
+**Challenge 2 Answer**
+
+```javascript
+var bottle = 99;
+
+for (bottle; bottle >= 0; bottle --){
+
+  if (bottle === 0) {
+    console.log("Hey! Go buy more beer!");
+  } else {
+      console.log(bottle + " bottles of beer on the wall");
+  }
+}
+```
+
+The `for` loop works with also works with arrays (which we'll get into shortly)
 
