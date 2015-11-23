@@ -7,16 +7,17 @@ Now that you've familiarized yourself with MVC, let's build our first app!
 
 **Challenge 1:** Create the application
 
-- Go to [the Rails Guide](http://guides.rubyonrails.org/getting_started.html#creating-the-blog-application) (ie: your new best friend) and figure out how to create a new application
+- Go to [the Rails Guide](http://guides.rubyonrails.org/getting_started.html#creating-the-blog-application) (your new best friend) and figure out how to create a new application
 - name the application pizza_shop
-- once complete cd into the app and run `bundle install`
-- fire up your server and make sure you're seeing this:
+- once complete `cd` into the app and run `bundle install`
+- fire up your server (use rails guides if you're unclear on starting the rails server) and make sure you're seeing this:
 
 ![](./images/rails_intro.png)
 
 - commit that up to github with the a message of "uploads initial files"
 
 <br>
+
 **Challenge 1 Answer:**
 
 ```shell 
@@ -46,9 +47,9 @@ The `app` directory is where you’ll spend most of your time.
 #####`assets`
 
 - The `assets` directory contains your “front-end” development files:
-	- images, 
-	- Javascript (.js , .js.coffee)
-	- style sheets (.css , .css.scss aka “sass”)
+	- images 
+	- Javascript
+	- stylesheets
 
 The files within this directory use the Rails asset pipeline... which is a topic for another time....
 
