@@ -1,4 +1,4 @@
-# Intro to Rails and MVC Architecture 
+# The MVC Architecture 
 
 ## MVC
 
