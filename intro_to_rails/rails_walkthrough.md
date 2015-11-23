@@ -12,7 +12,7 @@ Now that you've familiarized yourself with MVC, let's build our first app!
 - once complete cd into the app and run `bundle install`
 - fire up your server and make sure you're seeing this:
 
-![](rails_intro.png)
+![](./images/rails_intro.png)
 
 - commit that up to github with the a message of "uploads initial files"
 

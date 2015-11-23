@@ -60,7 +60,7 @@ Let's say that we want to display only the last 10 comments by a user...
 
 **To give you a visual of what's taking place:**
 
-![](mvc.png)  
+![](images/mvc.png)  
 
 - - - -
 
