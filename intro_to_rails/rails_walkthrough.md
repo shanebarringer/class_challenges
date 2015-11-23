@@ -166,4 +166,150 @@ files that will not be tracked with git
 
 where all the fun gems are stored
 
+- - - -
+
+## Generator the Resource
+
+That pretty much completes our leisurly walk through the file-tree. Now let's get back to building.
+
+We'll start with building a scaffold. Scaffolds are generated to help you easily and effeciently scale a `CRUD` based `model` `view` and `controller`. They are designed for ease of use and are an excellent way to learn how to build out your application. 
+
+Unfortunately, you won't get to use scaffolding all the time (in the real world) so don't get too comfortable with it. 
+
+
+**Challenge 2** - Scaffold your first resource
+
+In your terminal...
+
+- Use the [Rails Guides](http://guides.rubyonrails.org/generators.html#customizing-your-workflow) to figure out how to scaffold a Pizza resource with the following items:
+	- name (string) 
+	- crust (string) 
+	- sauce (string)
+	- toppings (text) 
+	- cost (integer)
+	- image (string)
+
+*note: You'll need to kill your server OR open another terminal window to complete this part of the challenge*
+
+
+
+**Challenge 2 Answer:**
+
+```shell
+$ rails g scaffold Pizza name:string crust:string sauce:string toppings:text cost:integer image:string
+```
+
+
+## Create the Resource
+
+Go ahead and fire up your server again (if it's not running already) and refresh. 
+
+Ouch! you'll probably see an error
+
+Let's take a moment and examine the error:
+
+**Challenge 3:**
+
+- User the error message OR [another part of the Rails Guide](http://guides.rubyonrails.org/command_line.html#rails-generate) to fix this error and actually **create** the Pizza resource. 
+
+*After running the command, refresh your page to see if the error is gone*
+
+
+**Challenge 3 Answer:**
+
+`$ rake db:migrate`
+
+
+So, what did we do here?
+
+in your terminal run `rake -T` and you'll see a list of rake tasks. Rake files are series of taks that are written in plain ruby that will execute a series of commands. Basically, they are fancy scripts. 
+
+We need to run the migration rake task so that our tables are actually created in the database. 
+
+- - - -
+
+### Add some Pizza
+
+Head on over to `http://localhost:3000/pizzas` and you'll should see a button allowing you to create a new pizza. 
+
+Let's go ahead and add in 3 pizzas. I've got some basic types that you can just copy and paste for now.
+
+Hawiian<br>
+    http://www.pizzahut.com.au/images/menu/1idry00prjdw4g0.png
+
+Meat Lovers<br>
+    http://www.papaleos.com/imx/pizza3a.jpg
+
+Veggie Delight<br>
+    http://www.pizzahut.com.au/images/menu/2zk1okyw0gis8s.png
+    
+
+- - - - 
+
+### HomePage
+
+Now, we need a good homepage (for when people land on our site).
+
+**Challenge 4:**
+
+- We're going to use a derivation of the bootstrap gem called starter_generators. 
+	- Navigate to your `gemfile`
+	- look at the layout
+	- add the `"starter_generators"` gem
+	- in the terminal run `bundle install` to sync your app with the new starter_generators gem.
+	- once successful run `rails g starter:style united` - this will install the bootstrap theme that we'll be using. 
+
+- Navigate to your Pizza views directory and create a `home.html.erb` file
+- To save all of us some time, just copy and paste the code below. 
+
+```html
+<div class="jumbotron">
+
+	<center>
+		<h1>Welcome to Zack's Zas</h1>
+
+		<img src="http://www.neonsign.com/media/catalog/product/cache/1/image/0f396e8a55728e79b48334e699243c07/4/0/407_1.jpg">
+		<br>
+
+		<%= link_to "Check out our Pizzas!", pizzas_path, class: "btn btn-default" %>
+	</center>
+</div>
+```
+
+- Navigate to your Pizza `controller` and add a `home` action
+
+<br>
+
+Once complete, navigate to `http://localhost:3000` in your browser...
+
+*Yeah... you'll notice an error. we need to create a route directing us home. (we'll do that in the next challenge)*
+
+
+**Challenge 4 Answer:**
+
+```ruby
+def home
+
+end
+```
+
+#### Create the Route
+
+We want the user to land on this page, when they first come to our site. To do this, complete the following challenge.
+
+**Challenge 5**
+
+- Head on over to [Railsbridge](http://docs.railsbridge.org/intro-to-rails/setting_the_default_page)
+- set the root route to point to the `home` action in the `pizza` controller.
+
+
+*Note: Anytime you make a change to your routes file, you'll need to restart your server. Otherwise the changes won't take effect.*
+
+
+**Challenge 5 Answer:**
+
+```ruby
+root "pizzas#home"
+```
+
 
