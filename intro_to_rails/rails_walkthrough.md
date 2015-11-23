@@ -260,7 +260,7 @@ Now, we need a good homepage (for when people land on our site).
 	- once successful run `rails g starter:style united` - this will install the bootstrap theme that we'll be using. 
 
 - Navigate to your Pizza views directory and create a `home.html.erb` file
-- To save all of us some time, just copy and paste the code below. 
+- To save yourself some time, just copy and paste the code below into your the `home.html.erb` file. 
 
 ```html
 <div class="jumbotron">
@@ -318,7 +318,7 @@ root "pizzas#home"
 
 ## Finishing touches
 
-Now, let's update the index and show pages, because these tables areon't going to work. 
+Now, let's update the index and show pages, because these tables aren't going to work. 
 
 **Challenge 6**
 
@@ -391,7 +391,7 @@ Last but not least, lets customze the individual pizza show pages.
 	8. Sauce
 	9. Toppings
 	10. Cost <br>
-	*hint: I'll get you stated, it should look something like this:* `<h3>Crust: <%= *your code here* %></h3>`
+	*hint: I'll get you stated, it should look something like this:* `<h3>Crust: <%= INSERT YOUR CODE HERE %></h3>`
 
 
 Save and refresh!
