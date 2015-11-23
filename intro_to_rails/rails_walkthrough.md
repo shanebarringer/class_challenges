@@ -34,7 +34,7 @@ $ git commit -m "uploads initial files"
 
 - - - -
 
-## Walkthrough the file structure
+## Walk through the file structure
 
 Let's detour for a moment and take a walk through your the file-tree.
 
@@ -168,7 +168,7 @@ where all the fun gems are stored
 
 - - - -
 
-## Generator the Resource
+## Generate the Resource
 
 That pretty much completes our leisurly walk through the file-tree. Now let's get back to building.
 
@@ -228,7 +228,7 @@ We need to run the migration rake task so that our tables are actually created i
 
 - - - -
 
-### Add some Pizza
+## Add some Pizza
 
 Head on over to `http://localhost:3000/pizzas` and you'll should see a button allowing you to create a new pizza. 
 
@@ -246,7 +246,7 @@ Veggie Delight<br>
 
 - - - - 
 
-### HomePage
+## HomePage
 
 Now, we need a good homepage (for when people land on our site).
 
