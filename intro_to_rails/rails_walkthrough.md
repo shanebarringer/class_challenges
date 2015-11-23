@@ -305,6 +305,8 @@ We want the user to land on this page, when they first come to our site. To do t
 
 *Note: Anytime you make a change to your routes file, you'll need to restart your server. Otherwise the changes won't take effect.*
 
+Refresh and you should see some magic.
+
 
 **Challenge 5 Answer:**
 
@@ -312,4 +314,103 @@ We want the user to land on this page, when they first come to our site. To do t
 root "pizzas#home"
 ```
 
+- - - - 
 
+## Finishing touches
+
+Now, let's update the index and show pages, because these tables areon't going to work. 
+
+**Challenge 6**
+
+1. Navigate to your pizza `index` view and delete all the existing html.
+2. dd a header that says "All of Zack's Zas
+3. create a `div` with the `class` of row
+4. inside that `div`, 
+	5. iterate over each pizza <br> *hint: the pizzas are stored in the `@pizzas` instance variable*
+	6. You'll want to use erb syntax for this part of the challenge. which looks like: `<% your iteration goes here: %>`
+	7. You'll need to end your loop with `<% end %>`
+8. Inside your loop, paste the following code:
+	
+	```html
+	<div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <img src="<%= pizza.image %>">
+      <div class="caption">
+        <h3><%= pizza.name %></h3>
+        <h3>Cost: $<%= pizza.cost %></h3>
+        <%= link_to "More Info", pizza, class: "btn btn-default" %>
+      </div>
+    </div>
+  </div>
+	``` 
+9. close out the `row div`
+10. add a line break and paste in the following code:
+	
+	```html
+	<%= link_to 'New Pizza', new_pizza_path, class: "btn btn-primary" %>
+	```
+
+Save and refresh!
+
+
+**Challenge 6 Answer:**
+
+```html
+<h1>All of Zack's Zas</h1>
+<div class="row">
+<% @pizzas.each do |pizza| %>
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <img src="<%= pizza.image %>">
+      <div class="caption">
+        <h3><%= pizza.name %></h3>
+        <h3>Cost: $<%= pizza.cost %></h3>
+        <%= link_to "More Info", pizza, class: "btn btn-default" %>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
+
+<br>
+
+<%= link_to 'New Pizza', new_pizza_path, class: "btn btn-primary" %>
+```
+
+
+Last but not least, lets customze the individual pizza show pages. 
+
+**Challenge 7**
+
+1. Take a couple of minutes and review the html, and then erase all of the content
+2. create a `jumbotron div` *(all code on this page will be nested in the jumbotron)*
+3. create a `<center>` html tag and nest the following 2 items inside. 
+	4. a header referring to the individual pizza name <br> *hint: for all of the pizza related items you'll need to use the `<%= %>` erb syntax*
+	5. paste the following `<img src="<%= @pizza.image %>">`
+6. Create 4 individual `<h3>` elements and add the following: 	7. Crust
+	8. Sauce
+	9. Toppings
+	10. Cost <br>
+	*hint: I'll get you stated, it should look something like this:* `<h3>Crust: <%= *your code here* %></h3>`
+
+
+Save and refresh!
+
+**Challenge 7 Answer:**
+
+```html
+<div class="jumbotron">
+  <center>
+    <h1><%= @pizza.name %></h1>
+    <img src="<%= @pizza.image %>">
+  </center>
+  <h3>Crust: <%= @pizza.crust %></h3>
+  <h3>Sauce: <%= @pizza.sauce %></h3>
+  <h3>Toppings: <%= @pizza.toppings %></h3>
+  <h3>Cost: $<%= @pizza.cost %></h3>
+</div>
+```
+- - - -
+
+
+That's it! You've just written your first rails app. Now, go enjoy some Pizza!
