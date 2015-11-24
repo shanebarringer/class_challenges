@@ -9,7 +9,7 @@ Now that you've familiarized yourself with MVC, let's build our first app!
 
 - Go to [the Rails Guide](http://guides.rubyonrails.org/getting_started.html#creating-the-blog-application) (your new best friend) and figure out how to create a new application
 - name the application pizza_shop
-- once complete `cd` into the app and run `bundle install`
+- once complete `cd` into the app and (btw, you may need to re-run `bundle install`)
 - fire up your server (use rails guides if you're unclear on starting the rails server) and make sure you're seeing this:
 
 ![](./images/rails_intro.png)
@@ -233,16 +233,17 @@ We need to run the migration rake task so that our tables are actually created i
 
 Head on over to `http://localhost:3000/pizzas` and you'll should see a button allowing you to create a new pizza. 
 
-Let's go ahead and add in 3 pizzas. I've got some basic types that you can just copy and paste for now.
+Let's go ahead and add in 3 pizzas. I've got some basic types that you can just copy and paste for now. (feel free to input your own price, toppings, etc.)
 
 Hawiian<br>
-    http://www.pizzahut.com.au/images/menu/1idry00prjdw4g0.png
+	https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQnQb1TVr1bjWQ5eOx8MuUT9XPUMJl-iI9utGik9ZAYfO-ai_uLuQ
+
 
 Meat Lovers<br>
     http://www.papaleos.com/imx/pizza3a.jpg
 
 Veggie Delight<br>
-    http://www.pizzahut.com.au/images/menu/2zk1okyw0gis8s.png
+    https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSFA58EIE5D6R59-EIBf608ufuVC58d4dVvVGekUTrlVny4Iqdv
     
 
 - - - - 
@@ -269,7 +270,7 @@ Now, we need a good homepage (for when people land on our site).
 	<center>
 		<h1>Welcome to Zack's Zas</h1>
 
-		<img src="http://www.neonsign.com/media/catalog/product/cache/1/image/0f396e8a55728e79b48334e699243c07/4/0/407_1.jpg">
+		<img src="http://ecx.images-amazon.com/images/I/41phkELgWyL._SX342_.jpg">
 		<br>
 
 		<%= link_to "Check out our Pizzas!", pizzas_path, class: "btn btn-default" %>
