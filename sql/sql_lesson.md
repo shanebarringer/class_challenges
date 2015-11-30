@@ -91,7 +91,177 @@ You can directly map these actions to the standard Rails operations
 
 - - - -
 
+## SQL in Rails
 
+(challenges in this stage will be completeed by the instructor, unless you are working through the lesson independently)
+
+**Challenge 1**
+
+1. Create a new rails app titled db_explore
+2. Navigate to the new app
+2. use scaffolding to generate a **User Resource**, with the following:
+	3. name (string)
+	4. age (integer)
+	5. city (string)
+6. Create the table in the database
+7. Once complete, Navitage to `localhost:3000/users` and add 5 users
+
+
+
+**Challenge 1 Answers:**
+
+
+```shell
+$ rails new db_explore
+$ cd db_explore
+```
+
+```shell
+$ rails g scaffold User name:string age:integer city:string
+```
+
+```shell
+$ rake db:migrate
+```
+
+### DB Console
+
+You can actually jump into the database directly by running `$ rails dbconsole`
+
+You'll be dropped into the database and should see a prompt that looks something like this: `sqlite>`
+
+
+Start by running the `.help` command. This will give you an idea of what you can accomplish in the dbconsole. 
+
+
+### SELECT
+
+`SELECT` is by far the most complicated part of SQL, so we'll start there. 
+
+You can pull all of the data from a specific table by running the following command: 
+
+```SQL
+sqlite> SELECT * FROM users;
+```
+
+Which will return:
+
+```shell
+1|Shane|31|Charlotte|2015-11-30 04:48:49.839777|2015-11-30 04:50:12.119858
+2|Zack|26|Mooresville|2015-11-30 04:49:32.560862|2015-11-30 04:49:32.560862
+3|Jon Paul|30|Los Angeles |2015-11-30 04:49:56.959506|2015-11-30 04:49:56.959506
+4|Nick|28|Kansas City|2015-11-30 04:51:17.870682|2015-11-30 04:51:17.870682
+5|Emily|33|Charlotte|2015-11-30 04:54:17.030918|2015-11-30 04:54:17.030918
+```
+
+Let's break down what's happening in that statement:
+
+1. to select/read we use the `SELECT` clause
+2. we use the `*` to reference ALL columns
+3. We use the `FROM` clause to point our statement to the `users` table
+
+
+#### A Few Things...
+
+It's great to get all the data, but sometimes you just want a few items. 
+
+**Challenge 2** 
+
+- Return only the name and age of all users
+- Displaying the following results:
+	
+	```shell
+	Shane|31
+	Zack|26
+	Jon Paul|30
+	Nick|28
+	Emily|33
+	```
+
+**Challenge 2 Answer:**
+
+```SQL
+sqlite> SELECT name, age FROM users;
+```
+
+#### Limitations
+
+If you have hundreds (or thousands) of rows in your table, you may want to get more specific and provide some limitations. In that case, you can use the following:
+
+```SQL
+sqlite> select * from users limit 2;
+```
+
+```shell
+1|Shane|31|Charlotte|2015-11-30 04:48:49.839777|2015-11-30 04:50:12.119858
+2|Zack|26|Mooresville|2015-11-30 04:49:32.560862|2015-11-30 04:49:32.560862
+```
+
+This returns the first 2 records for us. Now, I'm sure you're thinking 'what if I want something different?' Well just like offsetting in bootstrap, you can offset in your SQL statement. 
+
+try running: 
+
+```SQL
+sqlite> SELECT * FROM users LIMIT 3,2;
+```
+This will produce: 
+
+```shell
+4|Nick|28|Kansas City|2015-11-30 04:51:17.870682|2015-11-30 04:51:17.870682
+5|Emily|33|Charlotte|2015-11-30 04:54:17.030918|2015-11-30 04:54:17.030918
+```
+
+#### WHERE things get Specific
+
+What if you'd like to be more specific? Like... looking for a specific object? 
+
+```SQL
+sqlite> SELECT * FROM users WHERE name = "Jon Paul";
+```
+Using the `WHERE` clause will return:
+
+```shell
+3|Jon Paul|30|Los Angeles |2015-11-30 04:49:56.959506|2015-11-30 04:49:56.959506
+```
+
+You can dial in your search even further by adding multiple items to the `WHERE` clause by using the `AND` keyword.
+
+```SQL
+sqlite> SELECT * FROM users WHERE name = "Nick" AND age = 28;
+```
+will return:
+
+```shell
+sqlite> SELECT * FROM users WHERE name = "Nick" AND age = 28;
+```
+
+*note: `OR` is also an option...*
+
+Additionally, you can use comparison operators. Go ahead and try it.
+
+```SQL
+SELECT * FROM users WHERE age > 30;
+```
+returns:
+
+```shell
+1|Shane|31|Charlotte|2015-11-30 04:48:49.839777|2015-11-30 04:50:12.119858
+5|Emily|33|Charlotte|2015-11-30 04:54:17.030918|2015-11-30 04:54:17.030918
+```
+
+#### The Wildcard
+
+Sometimes, you want to find something in the database, but you're unsure of the exact phrase. Thankfully, SQL supplies us with the `%` (wildcard) operator. 
+
+```SQL
+sqlite> SELECT * FROM users WHERE name LIKE '%Z%';
+```
+
+returns:
+
+```shell
+2|Zack|26|Mooresville|2015-11-30 04:49:32.560862|2015-11-30 04:49:32.560862
+```
 
 - - - -
 ## Create an app
@@ -100,13 +270,13 @@ Alright! time for us to implement some things.
 
 okay, let's start by creating a new app
 
-```bash
+```shell
 $ rails new todo
 ```
 
 We will then scaffold a resource titled tasks
 
-```bash
+```shell
 $ rails generate scaffold tasks name:string priority:integer
 ```
 
@@ -160,7 +330,7 @@ Now you'll want to run the migration and actually CREATE the table by running `$
 
 Which will result in the following terminal output:
  
-```bash
+```shell
 == 20151103215638 CreateTasks: migrating ======================================
 -- create_table(:tasks)
    -> 0.0012s
@@ -195,7 +365,7 @@ First we'll need to CREATE a few tasks, similar to how we INSERTED data using SQ
 
 Take a moment and review the SQL output in the terminal. 
 
-```bash
+```shell
 (0.2ms)  begin transaction
 SQL (1.1ms)  INSERT INTO "tasks" ("name", "priority", "created_at", "updated_at") VALUES (?, ?, ?, ?)  
 [["name", "Pick up coffee"], ["priority", 1], ["created_at", "2015-11-04 05:19:09.834387"], ["updated_at", "2015-11-04 05:19:09.834387"]]
@@ -261,7 +431,7 @@ This will add 10 new random items to the database.
 
 **rails console answer:**
 
-```bash
+```shell
 irb(main):001:0> x = Task.new(name: "Pick up coffee", priority: 1)
 => #<Task id: nil, name: "Pick up coffee", priority: 1, created_at: nil, updated_at: nil>
 irb(main):002:0> x.save
