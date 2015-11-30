@@ -232,7 +232,7 @@ sqlite> SELECT * FROM users WHERE name = "Nick" AND age = 28;
 will return:
 
 ```shell
-sqlite> SELECT * FROM users WHERE name = "Nick" AND age = 28;
+4|Nick|28|Kansas City|2015-11-30 04:51:17.870682|2015-11-30 04:51:17.870682
 ```
 
 *note: `OR` is also an option...*
@@ -263,7 +263,105 @@ returns:
 2|Zack|26|Mooresville|2015-11-30 04:49:32.560862|2015-11-30 04:49:32.560862
 ```
 
+### UPDATE
+
+We've covered the basic `SELECT` actions, so let's move into the next stage.
+
+**Challenge 3**
+
+1. `UPDATE` Nick's (or anyone's) city to Los Angeles
+	2. start by `SELECT`ing Nick and finding the object ID
+	3. `UPDATE` the object
+4. Use `SELECT` to insure that the object has been updated 
+
+*hint: you'll need to use the `UPDATE` and `SET` commands. If you get stuck, use  [this](http://www.tutorialspoint.com/sql/sql-update-query.htm) as a reference.*
+
+
+**Challenge 3 Answer**
+
+```SQL
+sqlite> SELECT * FROM users WHERE name = "Nick";
+4|Nick|28|Kansas City|2015-11-30 04:51:17.870682|2015-11-30 04:51:17.870682
+
+sqlite> UPDATE users SET city = "Los Angeles" WHERE id = 4;
+
+sqlite> SELECT * FROM users WHERE name = "Nick";
+4|Nick|28|Los Angeles|2015-11-30 04:51:17.870682|2015-11-30 04:51:17.870682
+```
+
+Updating objects is pretty straight forward. Next we'll look at creating new objects. 
+
+
+#### INSERT
+
+We can use SQL to `INSERT` new objects into our database as well. Obviously, this represents the `create` operation in Rails. 
+
+This is done by using the following syntax:
+
+```SQL
+sqlite> INSERT INTO users (name, age, city) VALUES ("Andrew", 27, "Charlotte");
+```
+
+*note: this will produce an error at the moment*
+
+Looking closely you'll see that we are using the following keywords:
+
+- `INSERT`
+- `INTO`
+- `VALUES`
+
+While obviously, this makes sense in context. Pleaes take a moment to review each part of the statement closely. 
+
+Thankfully, rails prevents us from adding data directly to the DB unless it's time stamped. 
+
+Go ahead and add in created_at and updated_at values. 
+
+```SQL
+INSERT INTO users (name, age, city, created_at, updated_at) VALUES ("Andrew", 27, "Charlotte", 11/29/15, 11/29/15);
+```
+Selecting Andrew should return the following:
+
+```SQL
+SELECT * FROM users WHERE id = 6;
+6|Andrew|27|Charlotte|0|0
+```
+
+#### DELETE
+
+Last but not least, lets take a look at how to `DELETE` an object.
+
+**Challenge 4**
+
+1. `DELETE` the user with an id of 3
+2. 	`SELECT` all the users, to ensure the object was successfully deleted.
+
+
+**Challenge 4 Answer:**
+
+```SQL
+sqlite> DELETE FROM users WHERE id = 3;
+
+sqlite> SELECT * FROM users;
+1|Shane|31|Charlotte|2015-11-30 04:48:49.839777|2015-11-30 04:50:12.119858
+2|Zack|26|Mooresville|2015-11-30 04:49:32.560862|2015-11-30 04:49:32.560862
+4|Nick|28|Los Angeles|2015-11-30 04:51:17.870682|2015-11-30 04:51:17.870682
+5|Emily|33|Charlotte|2015-11-30 04:54:17.030918|2015-11-30 04:54:17.030918
+6|Andrew|27|Charlotte|0|0
+```
+
+You'll notice that the ID 3 is gone. Deleting an object at the database level will permanantly remove the ID as well. 
+
+<br>
+
+And, thats it! You've succesfully learned SQL crud actions and how they relate to rails. 
+
+Now we can jump into Active Record, but first, you'll need to get out of the dbconsole. 
+
+simply run `.exit` to get out. 
+
 - - - -
+
+
 ## Create an app
 
 Alright! time for us to implement some things.
