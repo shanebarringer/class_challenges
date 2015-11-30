@@ -61,6 +61,39 @@ What you do need to know is that both styles of data storage (relational and non
 
 <br>
 - - - -
+
+## Start with SQL
+
+So what is SQL? 
+
+SQL is an ancronym. Yes, another acronymn...<br>
+
+![](./images/acronyms.jpg)
+
+that stands for:
+
+**S - Structured**<br>**Q - Query**<br>**L - Language**<br>
+
+Great! so...
+
+![](./images/what.gif)
+
+According to [this site](http://searchsqlserver.techtarget.com/definition/SQL): 
+> SQL (Structured Query Language) is a standard interactive and programming language for getting information from and updating a database... **Queries take the form of a command language** that lets you select, insert, update, find out the location of data, and so forth.
+
+Basically... You submit queries, through the SQL language, to a structured (relational) database. Those queries can **insert** (create), **select** (read), **update**, or **delete** items. 
+
+You can directly map these actions to the standard Rails operations
+![](./images/crud_grid.jpg)
+
+*note: SQL can do significantly more than basic CRUD actions, but that is outside of the scope of this lesson. We are mainly focusing on the standard SQL actions for web applications.*
+
+
+- - - -
+
+
+
+- - - -
 ## Create an app
 
 Alright! time for us to implement some things.
