@@ -366,19 +366,38 @@ simply run `.exit` to get out.
 
 Alright! time for us to implement some things.
 
-okay, let's start by creating a new app
+okay, let's start by creating a new app. By now you should know the drill, but just in case... let's do another challenge
+
+**Challenge 5**
+
+1. Create a new Rails app named todo
+2. Scaffold a Tasks Resource
+3. When building the Resource make sure to include:
+	4. name (string)
+	5. priority (integer)
+6. STOP!
+7. Navigate to the migration file in your text editor
+8. STOP!
+
+
+<br>
+
+**Challenge 5 Answer:**  
 
 ```shell
 $ rails new todo
 ```
 
-We will then scaffold a resource titled tasks
-
 ```shell
 $ rails generate scaffold tasks name:string priority:integer
 ```
 
-Before doing anything else, go take a look at the migration file:
+
+<br>
+
+#### Migration Files
+
+Once the challenge is complete, you should have the following migration file:
 
 ```ruby
 class CreateTasks < ActiveRecord::Migration
@@ -452,16 +471,14 @@ It's like almost every other rails command. Simply type `$ rails console` and yo
 
 First we'll need to CREATE a few tasks, similar to how we INSERTED data using SQL. 
 
-**rails console challenge:**
+**Challenge 6:**
 
-- In Rails Console...
-	- Instantiate a new Task object
-	- Assign a value to name and priority (using hash syntax) 
-	- save it to the database
-
-*hint: [You may find the Rails Guides helpful](http://guides.rubyonrails.org/v3.2.13/getting_started.html) for solving this problem.*
-
-Take a moment and review the SQL output in the terminal. 
+1. Open the Rails Console...
+2. Instantiate a new Task object
+3. Assign a value to name and priority (using hash syntax) 
+4. save it to the database<br>*hint: [You may find the Rails Guides helpful](http://guides.rubyonrails.org/v3.2.13/getting_started.html) for solving this problem.* <br>
+5. Take a moment and review the SQL output in the terminal. *(note: it should look like the example below)* <br>
+6. Add 4 or 5 more items through the rails console.   
 
 ```shell
 (0.2ms)  begin transaction
@@ -471,16 +488,25 @@ SQL (1.1ms)  INSERT INTO "tasks" ("name", "priority", "created_at", "updated_at"
 
 => true
 ```
+
+
+
 <br>
 
-Add 4 or 5 more items through the rails console. 
-<br>
+
+**Challenge 6 Answer:**
+
+```shell
+irb(main):001:0> x = Task.new(name: "Pick up coffee", priority: 1)
+=> #<Task id: nil, name: "Pick up coffee", priority: 1, created_at: nil, updated_at: nil>
+irb(main):002:0> x.save
+```
+
 
 #### New or Create
-A shorthand way to add items is by calling `Task.create` (this rolls new and save into one command)
+btw - a shorthand way to add items is by calling `Task.create` (this rolls new and save into one command)
 
 
-table print gem
 - - - - 
 
 ## Seed some Data
@@ -523,17 +549,51 @@ Now run `rake db:seed`
 
 This will add 10 new random items to the database. 
 
-- - - - 
-## Answers
+#### ffaker
+
+Thankfully, there is an easier way to add 'test data' to your application. My favorite solution is an app by the name of [ffaker](https://github.com/ffaker/ffaker). 
+
+**Challenge 7** 
+
+1. User the [the ffaker ruby gems info page](https://rubygems.org/gems/ffaker/versions/2.1.0) to add ffaker to your project
+2. While we're at it... Add [Table Print](https://github.com/arches/table_print) to your project
+3. Make sure to `bundle install`!
 
 
-**rails console answer:**
+**Challenge 7 Answer:**
+
+**ffaker**
+
+```ruby
+#in your gemfile
+gem 'ffaker', '~> 2.1'
+```
+
+**Table Print**
+
+```ruby
+# in your gemfile
+gem 'table_print'
+```
+
+**Install**
 
 ```shell
-irb(main):001:0> x = Task.new(name: "Pick up coffee", priority: 1)
-=> #<Task id: nil, name: "Pick up coffee", priority: 1, created_at: nil, updated_at: nil>
-irb(main):002:0> x.save
+$ bundle install
 ```
+
+Now you can generate dummy data. Navigate to your the rails console and run the following command:
+
+```shell
+irb(main):001:0> Task.new(name: FFaker::HipsterIpsum.words, priority: (1..3).to_a.sample)
+```
+
+Now, see if you can create a loop. Or better yet, add this to your seed file.
+
+
+- - - - 
+
+
 
 
 
