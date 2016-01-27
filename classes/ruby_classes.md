@@ -10,7 +10,7 @@ end
 ```
 Pretty simple stuff right?<br>
 
-As you've heard many times before. In Ruby _everything is an object_... The job of a class is to define all of the logic and actions that will be available to our object. 
+As you've heard many times before. In Ruby _everything is an object_... The job of a class is to define all of the logic and actions that will be available to your object. 
 <br>
 
 In order to **instantiate** (create) objects of a **class**, your class must include an initialize method
@@ -20,7 +20,7 @@ In order to **instantiate** (create) objects of a **class**, your class must inc
 
 1. Create a Person class
 2. Add an initialize method
-	3. include the paramaters
+	3. include the parameters
 		- first_name
 		- last_name
 		- occupation 
