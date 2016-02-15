@@ -33,7 +33,7 @@ You can open the JS Console by typing `cmd` +  `option` + `j`
 
 Here you can: 
 
-- test and log output from your pgogram
+- test and log output from your program
 - scratch out ideas and concepts
 - test out those new ideas
 - interact with JavaScript variables, objects, etc. that have loaded with the page.
