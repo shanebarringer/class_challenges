@@ -325,7 +325,7 @@ Now, let's update the index and show pages, because these tables aren't going to
 **Challenge 6**
 
 1. Navigate to your pizza `index` view and delete all the existing html.
-2. dd a header that says "All of Zack's Zas
+2. add a header that says "All of Zack's Zas
 3. create a `div` with the `class` of row
 4. inside that `div`, 
 	5. iterate over each pizza <br> *hint: the pizzas are stored in the `@pizzas` instance variable*
