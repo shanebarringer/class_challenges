@@ -85,19 +85,17 @@ and #{weight_kilograms.to_s} kg"
 ```ruby
 puts "Hi! what's your name?"
 my_name = gets.chomp
-		
+
 puts "How tall are you (in inches)?"
-height_inches = gets.chomp
-		
+height_inches = gets.chomp.to_f
+
 puts "If you don't mind me asking,
 how much do you weight?"
-weight_pounds = gets.chomp
-	
+weight_pounds = gets.chomp.to_f
+
 height_centimeters = height_inches * 2.54
 
 weight_kilograms = weight_pounds * 0.453592
 
-puts "#{my_name} is #{height_centimeters.to_s} cm 
-and #{weight_kilograms.to_s} kg"
+puts "#{my_name} is #{height_centimeters} cm and #{weight_kilograms} kg"
 ```
-- - - - 
