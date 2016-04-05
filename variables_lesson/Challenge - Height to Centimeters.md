@@ -66,7 +66,7 @@ puts "If you don't mind me asking,
 how much do you weight?
 weight_pounds = gets.chomp
 			
-puts "#{my_name} is #{height_inches.to_s} 
+puts "#{my_name} is #{height_inches} 
 inches tall and weighs #{weight_pounds}"
 ```		
 
@@ -76,8 +76,8 @@ inches tall and weighs #{weight_pounds}"
 height_centimeters = height_inches * 2.54
 ```
 ```ruby		
-puts "{my_name} is #{height_centimeters.to_s} cm 
-and #{weight_kilograms.to_s} kg"
+puts "{my_name} is #{height_centimeters} cm 
+and #{weight_kilograms} kg"
 ```		
 
 ##### Completed Code
