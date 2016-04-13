@@ -377,7 +377,10 @@ Great! So now our Superhero objects have access to all of the methods and abilit
 
 ## Super
 
+In the above example, we've chosen to *override* the `initialize` method. This is so that we can get more functionality out of our the method in our new class. 
+While this is simply done by using the same method name, often you'll want some of the same functionality from the method you've overwritten. Ruby makes this very simple by giving you the `super` keyword. 
 
+*`super` will first call the original method (inherited from the parent class) and then run the actions of your current method*
 
 - - - -
 ## Answers
