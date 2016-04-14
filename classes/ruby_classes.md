@@ -267,7 +267,7 @@ And if you are thinking that, then you'd be correct! Thankfully Ruby has attr me
 ```ruby
 class Person
 
-	attr_reader :first_name, :last_name, occupation
+	attr_reader :first_name, :last_name, :occupation
 	
 	def initialize(first_name, last_name, occupation)
 		@first_name = first_name
