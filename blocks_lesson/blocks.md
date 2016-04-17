@@ -15,6 +15,8 @@ end
 
 Blocks are temporary methods without names. (we could call them anonymous methods). Instead of naming the method, we treat it like an argument to another method. 
 
+*Instead of naming the method however, we treat a block like an argument to another method*
+
 ```ruby
 some_numbers = [1,2,3,4]
 
