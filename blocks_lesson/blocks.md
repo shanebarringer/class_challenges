@@ -1,4 +1,4 @@
-#Ruby Blocks
+##Ruby Blocks
 
 What is a block? 
 
@@ -23,13 +23,18 @@ some_numbers.each do |number|
 end
 ```
 
-**class challenge:**
+**class challenge 1:**
 
-print the exponent of each item. 
+- create an array of at least 4 numbers
+- write a block that prints the exponent of each item in your array
+	- multiply the individual to to it's own power 
+	- **4<sup>4</sup>** (4 * 4 * 4 * 4)
+- simply print the new results to the screen (don't worry about returning new values)
+
+
+## Procs
 
 Procs are for storing your block in a named variable
-
-
 
 
 ```ruby
@@ -47,5 +52,26 @@ You can then invoke a Proc in place of your block.
 numbers.each(&countdown)
 ```
 
+##### Class Challenge 2: 
+- Turn your exponent block into a proc
+- Produce a new array with the exponents of your original array
+
+
+### Class Challenge Answers
+
+##### Challenge 1 Answer: 
+
+```ruby
+some_numbers.each do |num|
+  puts num ** num
+end
+```
+
+##### Challenge 2 Answer: 
+
+```ruby 
+exponify = Proc.new{|x| x ** x }
+exponents = some_numbers.map(&exponify)
+```
 _ _ _ _
 
