@@ -1,6 +1,8 @@
 ##Ruby Blocks
 
-What is a block? 
+#### What is a block? 
+
+The best way for you to understand blocks in Ruby is to look at the code:
 
 ```ruby 
 numbers = [3,2,1]
@@ -24,6 +26,56 @@ some_numbers.each do |number|
 	puts number * number
 end
 ```
+
+#### Special Arguments
+Blocks allow you to pass a series of instructions to a method as a special argument
+
+You are already super familiar with blocks as you've been using them with `.each` `.map` etc. 
+
+Let's break down `.map`. <br> First we'll start with an array:
+
+```ruby
+students = ["aj", "melvin", "ashley"]
+```
+
+Next we'll call `.map` on the students array and use the `.upcase` method on each item:
+
+```ruby
+completed_homework = students.map do |student|
+	student.upcase
+end
+```
+
+The end result will be:
+
+```ruby
+completed_homework
+#=> ["AJ", "MELVIN", "ASHLEY"]
+```
+
+So, what happened here?
+
+- `.map` returns a new array
+	- containing the modified contents of the previous array
+	- leaving the original array as-is
+- The new array (that `.map` returns) is a result of the **block**'s instructions 
+	- `.map` takes a block
+	- uses the block instruction to transform the array items
+	- returns the results as a new array
+
+### Using `&:`
+
+Ruby offers a handy way to shorten your code if you're using the same operation of each of your array elements. 
+
+Let's look at our previous example of transforming the student array to see how this would work:
+
+```ruby
+upcased = students.map(&:upcase)
+```
+We know that we are going to use the upcase method on each item in the array.<br>
+Using the `&:` syntax notifies the ruby interpreter that it should take the same action on each array item. 
+
+*note: While this pattern is not necessary, you will find it heavily used in many Ruby Libraries*
 
 **class challenge 1:**
 
