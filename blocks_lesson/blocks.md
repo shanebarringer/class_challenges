@@ -86,6 +86,27 @@ Using the `&:` syntax notifies the ruby interpreter that it should take the same
 - simply print the new results to the screen (don't worry about returning new values)
 
 
+## Yield
+
+Yield can be a confusing concept to initially understand. However, if you don't overthink it, you'll find that a magical concept that can be very useful. 
+
+Let's look at an example
+
+```ruby
+def my_method
+  puts "reached the top"
+  yield
+  puts "reached the bottom"
+end
+
+my_method do
+  puts "reached yield"
+end
+```
+
+As stated in this [excellent](http://mixandgo.com/blog/mastering-ruby-blocks-in-less-than-5-minutes) blog on Ruby Blocks: 
+> when the execution of my_method reaches the line with the call to yield, the code inside the block gets executed. Then, when the code inside the block finishes, the execution of my_method continues.
+
 ## Procs
 
 Procs are for storing your block in a named variable
