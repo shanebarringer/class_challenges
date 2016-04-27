@@ -345,7 +345,7 @@ In your main.css file, type the following:
 
 ```css
 body {
-  font-family: 'Raleway', 'sans-serif'
+  font-family: 'Raleway', 'sans-serif';
 }
 ```
 
