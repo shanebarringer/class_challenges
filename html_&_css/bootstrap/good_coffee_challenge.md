@@ -496,11 +496,14 @@ So, we're going to create a some containers.
 in your index.html:
 
 ```html
-<div class="mission">
+<div class="mission container-fluid">
+  <div class="row">
+    <a name="mission"></a>
     <h3> Here at Good Coffee Co we are passionate about serving the best coffee you'll ever taste.
     <br> Our staff are self-described coffee-nerds with impeccable technique.
     <br> Stop by today and experience the Good Coffee difference. 
     </h3>
+  </div>
 </div>
 ```
 
