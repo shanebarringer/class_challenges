@@ -537,7 +537,7 @@ Divide the page into 12 columns. and then move content along those columns. This
 1. Take 2 minutes and read the [Introduction](http://getbootstrap.com/css/#grid) to bootstrap's grid. 
 2. Add the container class to your features `<div>`
 3. Wrap each `<p>` in it's own `<div>`
-4. Nest your new `<div>`'s within a row class
+4. Nest your new `<div>`'s within a row `<div>`
 5. Using bootstrap's grid. make each `<div>` (within the row) span: 
 	6. 12 columns on extra small devices. 
 	7. 4 columns on small devices (and up)
