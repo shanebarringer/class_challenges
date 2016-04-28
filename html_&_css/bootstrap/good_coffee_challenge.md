@@ -583,6 +583,29 @@ Yeah... it's bad... real bad... the images are being displayed at their stock re
 
 simply assign the class 'img-responsive' to your `<img>` element like so: `<img class="img-reponsive">`
 
+** Challenge 9 Answer ** 
+
+```html
+ <div class="container features">
+    <div class="row">
+      <div class="col-sm-4">
+        <img class="img-responsive" src="images/coffee_beans.jpg" alt="coffee beans" />
+        <p> The freshest locally sourced coffee. Organic and Fair Trade certified</p>
+      </div>
+
+
+      <div class="col-sm-4">
+        <img class="img-responsive" src="images/coffee_shop.jpg" alt="coffee shop" />
+        <p> A perfect environment to meet with a friend or be alone and get work done.</p>
+      </div>
+      <div class="col-sm-4">
+        <img class="img-responsive" src="images/espresso.jpg" alt="espresso">
+        <p> Quality hand-crafted espresso shots pulled with the greatest of care.</p>
+      </div>
+    </div>
+  </div>
+```
+
 Afterwards. Your page should look like this: 
 
 ![](../images/gc_9.png)
