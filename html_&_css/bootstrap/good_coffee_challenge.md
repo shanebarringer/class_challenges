@@ -583,7 +583,7 @@ Yeah... it's bad... real bad... the images are being displayed at their stock re
 
 simply assign the class 'img-responsive' to your `<img>` element like so: `<img class="img-reponsive">`
 
-** Challenge 9 Answer ** 
+**Challenge 9 Answer** 
 
 ```html
  <div class="container features">
