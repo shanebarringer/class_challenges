@@ -481,7 +481,7 @@ class Superhero < Person
 
   def initialize(first_name, last_name, occupation, super_power)
     super(first_name, last_name, occupation)
-    @hero_name = @occupation
+    @hero_name = occupation
     @super_power = super_power
   end
 
