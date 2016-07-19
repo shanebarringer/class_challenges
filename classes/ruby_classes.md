@@ -490,6 +490,3 @@ class Superhero < Person
   end
 end
 ```
-
-
-
