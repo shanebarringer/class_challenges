@@ -359,7 +359,7 @@ body {
 I've also picked out a color scheme (feel free to change it up)
 
 We'll be using `#A2DED0` as our primary color.<br>
-`#323232` and `#D645651` will be our secondary colors. 
+`#323232` and `#D64541` will be our secondary colors. 
 
 Go ahead and apply the primary color to the background of our `<body>`. 
 
