@@ -371,7 +371,7 @@ okay, let's start by creating a new app. By now you should know the drill, but j
 **Challenge 5**
 
 1. Create a new Rails app named todo
-2. Scaffold a Tasks Resource
+2. Scaffold a Task Resource
 3. When building the Resource make sure to include:
 	4. name (string)
 	5. priority (integer)
