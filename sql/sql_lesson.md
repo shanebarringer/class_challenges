@@ -557,7 +557,8 @@ Thankfully, there is an easier way to add 'test data' to your application. My fa
 
 1. User the [the ffaker ruby gems info page](https://rubygems.org/gems/ffaker/versions/2.1.0) to add ffaker to your project
 2. While we're at it... Add [Table Print](https://github.com/arches/table_print) to your project
-3. Make sure to `bundle install`!
+3. Finally, for better logging, add the [shog gem](https://github.com/phallguy/shog)
+4. Make sure to `bundle install`!
 
 
 **Challenge 7 Answer:**
@@ -574,6 +575,13 @@ gem 'ffaker', '~> 2.1'
 ```ruby
 # in your gemfile
 gem 'table_print'
+```
+
+**shog**
+
+```ruby
+# in your gemfile
+gem 'shog'
 ```
 
 **Install**
