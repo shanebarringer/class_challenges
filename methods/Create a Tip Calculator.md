@@ -16,10 +16,6 @@
 
 	*hint: you'll need to multiply using a float, and don't forget to convert your answer into the proper data-type!*
 
-
-
-
-
 ----
 ### Step 2 - total\_with_grat method
 - - - -
