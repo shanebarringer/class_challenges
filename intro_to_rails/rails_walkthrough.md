@@ -237,7 +237,7 @@ Let's go ahead and add in 3 pizzas. I've got some basic types that you can just 
 
 [Hawiian](https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQnQb1TVr1bjWQ5eOx8MuUT9XPUMJl-iI9utGik9ZAYfO-ai_uLuQ)
 
-[Meat Lovers](http://eatnowcrylater.com/wp-content/uploads/2014/02/IMG_9484.jpg)
+[Meat Lovers](http://static.telepizza.es/vol/pt/images/content/productos/pzbc_c.png)
 
 [Veggie Delight](https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSFA58EIE5D6R59-EIBf608ufuVC58d4dVvVGekUTrlVny4Iqdv)
     
