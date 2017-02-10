@@ -480,7 +480,7 @@ class Superhero < Person
   attr_accessor :super_power, :hero_name
 
   def initialize(first_name, last_name, occupation, super_power)
-    super(first_name, last_name, occupation)
+    super(first_name, last_name, nil)
     @hero_name = occupation
     @super_power = super_power
   end
